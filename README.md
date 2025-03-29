@@ -34,3 +34,4 @@ ON a.sales_rep_id = s.id
 WHERE r.name = 'Midwest' AND s.name LIKE '% K%'
 ORDER BY a.name;
 ```
+- Provide the **name** for each region for every **order**, as well as the account **name** and the **unit price** they paid (total_amt_usd/total) for the order. However, you should only provide the results if the **standard order quantity** exceeds `100`. Your final table should have 3 columns: **region name**, **account name**, and **unit price**.
