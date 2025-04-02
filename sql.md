@@ -88,7 +88,7 @@ SELECT *
 FROM web_events
 WHERE channel IN ('organic', 'adwords');
 ```
-- Use the accounts table to find the account name, primary poc, and sales rep id for all stores except Walmart, Target, and Nordstrom.
+- Use the **accounts** table to find the account name, primary poc, and sales rep id for all stores except Walmart, Target, and Nordstrom.
 ```sql
 SELECT name, primary_poc, sales_rep_id
 FROM accounts
