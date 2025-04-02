@@ -70,6 +70,12 @@ SELECT name
 FROM accounts
 WHERE name LIKE '%one%';
 ```
+- Use the accounts table to find all companies whose names end with 's'.
+```sql
+SELECT name
+FROM accounts
+WHERE name LIKE '%s';
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
