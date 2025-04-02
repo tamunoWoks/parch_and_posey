@@ -32,6 +32,13 @@ SELECT id, account_id, total_amt_usd
 FROM orders
 ORDER BY total_amt_usd DESC, account_id;
 ```
+- Pulls the first 5 rows and all columns from the orders table that have a dollar amount of gloss_amt_usd greater than or equal to 1000.
+```sql
+SELECT *
+FROM orders
+WHERE gloss_amt_usd >= 1000
+LIMIT 5;
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
