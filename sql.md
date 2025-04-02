@@ -100,6 +100,12 @@ SELECT *
 FROM web_events
 WHERE channel NOT IN ('organic', 'adwords');
 ```
+- Use the accounts table to find all the companies whose names do not start with 'C'.
+```sql
+SELECT *
+FROM accounts
+WHERE name NOT LIKE 'C%';
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
