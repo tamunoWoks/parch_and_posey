@@ -58,6 +58,12 @@ SELECT id, account_id, standard_amt_usd, standard_qty, standard_amt_usd/standard
 FROM orders
 LIMIT 10;
 ```
+- Use the accounts table to find all the companies whose names start with 'C'.
+```sql
+SELECT name
+FROM accounts
+WHERE name LIKE 'C%';
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
