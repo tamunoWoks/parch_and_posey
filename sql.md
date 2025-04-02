@@ -76,12 +76,18 @@ SELECT name
 FROM accounts
 WHERE name LIKE '%s';
 ```
-- Use the accounts table to find the account name, primary_poc, and sales_rep_id for Walmart, Target, and Nordstrom.
+- Use the **accounts** table to find the account `name`, `primary_poc`, and `sales_rep_id` for Walmart, Target, and Nordstrom.
 ```sql
 SELECT name, primary_poc, sales_rep_id
 FROM accounts
 WHERE name IN ('Walmart','Target','Nordstrom');
 ```
+- Use the **web_events** table to find all information regarding individuals who were contacted via the **channel** of `organic` or `adwords`.
+```sql
+SELECT *
+FROM web_events
+WHERE channel IN ('organic', 'adwords');
+```  
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
