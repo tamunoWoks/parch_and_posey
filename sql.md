@@ -87,7 +87,13 @@ WHERE name IN ('Walmart','Target','Nordstrom');
 SELECT *
 FROM web_events
 WHERE channel IN ('organic', 'adwords');
-```  
+```
+- Use the accounts table to find the account name, primary poc, and sales rep id for all stores except Walmart, Target, and Nordstrom.
+```sql
+SELECT name, primary_poc, sales_rep_id
+FROM accounts
+WHERE name NOT IN ('Walmart', 'Target', 'Nordstrom');
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
