@@ -112,6 +112,12 @@ SELECT *
 FROM accounts
 WHERE name NOT LIKE '%one%';
 ```
+- Use the accounts table to find all companies whose names do not end with 's'.
+```sql
+SELECT *
+FROM accounts 
+WHERE name NOT LIKE '%s';
+```
 - Provide a table that provides the **region** for each **sales_rep** along with their associated **accounts**. This time only for the 'Midwest' region. Your final table should include three columns: the region **name**, the sales rep **name**, and the account **name**. Sort the accounts alphabetically (A-Z) according to account name.
 ```sql
 SELECT r.name region, s.name rep, a.name account
