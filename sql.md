@@ -250,4 +250,4 @@ GROUP BY a.name
 ORDER BY min_order;
 ```
 Sort of strange we have a bunch of orders with no dollars. We might want to look into those.
-- 
+- Find the number of **sales reps** in each region. Your final table should have two columns the **region** and the number of **sales_reps**. Order from fewest reps to most reps.
