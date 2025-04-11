@@ -198,3 +198,4 @@ ON a.id = o.account_id
 ORDER BY o.occurred_at
 LIMIT 1;
 ```
+- Find the total sales in usd for each account. You should include two columns - the total sales for each company's orders in usd and the company **name**.
