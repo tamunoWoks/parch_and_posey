@@ -190,3 +190,11 @@ WHERE o.standard_qty > 100 AND o.poster_qty > 50
 ORDER BY unit_price DESC;
 ```
 - Which **account** (by name) placed the earliest order? Your solution should have the **account name** and the **date** of the order.
+```sql
+SELECT a.name, o.occurred_at
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+ORDER BY o.occurred_at
+LIMIT 1;
+```
