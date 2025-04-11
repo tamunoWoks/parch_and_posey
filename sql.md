@@ -241,3 +241,11 @@ ORDER BY w.occurred_at
 LIMIT 1;
 ```
 - What was the smallest order placed by each **account** in terms of total usd. Provide only two columns - the **account name** and the total usd. Order from smallest dollar amounts to largest.
+```sql
+SELECT a.name, MIN(o.total_amt_usd) min_order
+FROM accounts a
+JOIN orders o
+On a.id = o.account_id
+GROUP BY a.name
+ORDER BY min_order;
+```
