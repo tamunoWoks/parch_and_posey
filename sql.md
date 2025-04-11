@@ -232,3 +232,11 @@ FROM web_events
 GROUP BY channel;
 ```
 - Who was the **primary contact** associated with the earliest **web_event**?
+```sql
+SELECT primary_poc
+FROM accounts a
+JOIN web_events w
+ON a.id = w.account_id
+ORDER BY w.occurred_at 
+LIMIT 1;
+```
