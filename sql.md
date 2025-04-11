@@ -189,3 +189,4 @@ ON o.account_id = a.id
 WHERE o.standard_qty > 100 AND o.poster_qty > 50
 ORDER BY unit_price DESC;
 ```
+- Which **account** (by name) placed the earliest order? Your solution should have the **account name** and the **date** of the order.
