@@ -249,3 +249,5 @@ On a.id = o.account_id
 GROUP BY a.name
 ORDER BY min_order;
 ```
+Sort of strange we have a bunch of orders with no dollars. We might want to look into those.
+- 
