@@ -231,3 +231,4 @@ SELECT channel, COUNT(*)
 FROM web_events
 GROUP BY channel;
 ```
+- Who was the **primary contact** associated with the earliest **web_event**?
