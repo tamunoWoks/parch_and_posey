@@ -259,3 +259,4 @@ ON r.id = s.region_id
 GROUP BY r.name
 ORDER BY num_reps;
 ```
+- For each account, determine the average amount of each type of paper they purchased across their orders. Your result should have four columns - one for the account **name** and one for the average quantity purchased for each of the paper types for each account.
