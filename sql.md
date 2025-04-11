@@ -178,7 +178,9 @@ ORDER BY unit_price;
 ```
 - Provide the **name** for each region for every **order**, as well as the account **name** and the **unit price** they paid (total_amt_usd/total) for the order. However, you should only provide the results if the **standard order quantity** exceeds `100` and the **poster order quantity** exceeds `50`. Your final table should have 3 columns: **region name**, **account name**, and **unit price**. Sort for the largest **unit price** first.
 ```sql
-SELECT r.name region, a.name account, o.total_amt_usd/(o.total + 0.01) unit_price
+SELECT r.name region,
+       a.name account,
+       o.total_amt_usd/(o.total + 0.01) unit_price
 FROM region r
 JOIN sales_reps s
 ON s.region_id = r.id
