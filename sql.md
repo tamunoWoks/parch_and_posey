@@ -280,3 +280,12 @@ JOIN orders o ON a.id = o.account_id
 GROUP BY a.name;
 ```
 - Determine the number of times a particular **channel** was used in the **web_events** table for each **sales rep**. Your final table should have three columns - the **name of the sales rep**, the **channel**, and the number of occurrences. Order your table with the highest number of occurrences first.
+```sql
+SELECT s.name, w.channel,
+       COUNT(*) AS num_events
+FROM accounts a
+JOIN sales_reps s ON a.sales_rep_id = s.id
+JOIN web_events w ON w.account_id = a.id
+GROUP BY s.name, w.channel
+ORDER BY num_events DESC;
+```
