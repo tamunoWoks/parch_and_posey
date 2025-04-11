@@ -269,3 +269,4 @@ FROM accounts a
 JOIN orders o ON a.id = o.account_id
 GROUP BY a.name;
 ```
+- For each account, determine the average amount spent per order on each paper type. Your result should have four columns - one for the account **name** and one for the average amount spent on each paper type.
