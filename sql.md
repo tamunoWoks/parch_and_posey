@@ -240,3 +240,4 @@ ON a.id = w.account_id
 ORDER BY w.occurred_at 
 LIMIT 1;
 ```
+- What was the smallest order placed by each **account** in terms of total usd. Provide only two columns - the **account name** and the total usd. Order from smallest dollar amounts to largest.
