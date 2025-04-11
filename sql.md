@@ -199,3 +199,10 @@ ORDER BY o.occurred_at
 LIMIT 1;
 ```
 - Find the total sales in usd for each account. You should include two columns - the total sales for each company's orders in usd and the company **name**.
+```sql
+SELECT a.name, SUM(o.total_amt_usd) total_sales
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.name;
+```
