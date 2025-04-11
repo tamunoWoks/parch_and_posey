@@ -217,3 +217,11 @@ ON a.id = o.account_id
 GROUP BY a.name;
 ```
 - Via what **channel** did the most recent (latest) **web_event** occur, which **account** was associated with this **web_event**? Your query should return only three values - the **date**, **channel**, and **account name**.
+```sql
+SELECT a.name, w.channel, w.occurred_at
+FROM accounts a
+JOIN web_events w
+ON a.id = w.account_id
+ORDER BY w.occurred_at DESC
+LIMIT 1;
+```
