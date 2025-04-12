@@ -315,3 +315,4 @@ SELECT DISTINCT id, name
 FROM accounts;
 ```
 The two queries have the same number of resulting rows (351), so we know that every account is associated with only one region. If each account was associated with more than one region, the first query should have returned more rows than the second query.
+- Have any sales reps worked on more than one account?
