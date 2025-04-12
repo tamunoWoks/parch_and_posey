@@ -314,4 +314,4 @@ JOIN region r ON r.id = s.region_id;
 SELECT DISTINCT id, name
 FROM accounts;
 ```
-These two queries return the same number of rows, hence each account is unique to a region.
+The two queries have the same number of resulting rows (351), so we know that every account is associated with only one region. If each account was associated with more than one region, the first query should have returned more rows than the second query.
