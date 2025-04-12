@@ -329,3 +329,4 @@ SELECT DISTINCT id, name
 FROM sales_reps;
 ```
 Using DISTINCT in the second query assures that all of the sales reps are accounted for in the first query.
+- How many of the sales reps have more than 5 accounts that they manage?
