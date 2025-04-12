@@ -338,3 +338,4 @@ GROUP BY s.id, s.name
 HAVING COUNT(*) > 5
 ORDER BY num_accounts;
 ```
+Technically, we can get this using a **SUBQUERY** as shown below. This same logic can be used for the other queries.
