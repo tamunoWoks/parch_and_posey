@@ -349,3 +349,12 @@ FROM(SELECT s.id, s.name, COUNT(*) num_accounts
         HAVING COUNT(*) > 5
         ORDER BY num_accounts) AS Table1;
 ```
+- How many accounts have more than 20 orders?
+```sql
+SELECT a.id, a.name, COUNT(*) num_orders
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING COUNT(*) > 20
+ORDER BY num_orders;
+```
