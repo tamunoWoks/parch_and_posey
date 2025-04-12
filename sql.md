@@ -328,3 +328,4 @@ Actually all of the sales reps have worked on more than one account. The fewest 
 SELECT DISTINCT id, name
 FROM sales_reps;
 ```
+Using DISTINCT in the second query assures that all of the sales reps are accounted for in the first query.
