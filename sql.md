@@ -304,3 +304,13 @@ GROUP BY r.name, w.channel
 ORDER BY num_events DESC;
 ```
 - Use DISTINCT to test if there are any accounts associated with more than one region.
+```sql
+SELECT a.id as "account id", r.id as "region id", 
+a.name as "account name", r.name as "region name"
+FROM accounts a
+JOIN sales_reps s ON s.id = a.sales_rep_id
+JOIN region r ON r.id = s.region_id;
+
+SELECT DISTINCT id, name
+FROM accounts;
+```
