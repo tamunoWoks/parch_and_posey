@@ -303,3 +303,4 @@ ON r.id = s.region_id
 GROUP BY r.name, w.channel
 ORDER BY num_events DESC;
 ```
+- Use DISTINCT to test if there are any accounts associated with more than one region.
