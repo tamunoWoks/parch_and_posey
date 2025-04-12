@@ -316,3 +316,10 @@ FROM accounts;
 ```
 The two queries have the same number of resulting rows (351), so we know that every account is associated with only one region. If each account was associated with more than one region, the first query should have returned more rows than the second query.
 - Have any sales reps worked on more than one account?
+```sql
+SELECT s.id , s.name, COUNT(*) num_acc
+FROM accounts a
+JOIN sales_reps s ON s.id = a.sales_rep_id
+GROUP BY s.id, s.name
+ORDER BY num_acc;
+```
