@@ -412,3 +412,4 @@ GROUP BY a.id, a.name, w.channel
 HAVING w. channel = 'facebook' AND COUNT(*) > 6
 ORDER BY channel_use;
 ```
+- Which account used `facebook` most as a **channel**?
