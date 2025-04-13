@@ -323,7 +323,7 @@ JOIN sales_reps s ON s.id = a.sales_rep_id
 GROUP BY s.id, s.name
 ORDER BY num_acc;
 ```
-Actually all of the sales reps have worked on more than one account. The fewest number of accounts any sales rep works on is 3. There are 50 sales reps, and they all have more than one account.
+**Note:** Actually all of the sales reps have worked on more than one account. The fewest number of accounts any sales rep works on is 3. There are 50 sales reps, and they all have more than one account.
 ```sql
 SELECT DISTINCT id, name
 FROM sales_reps;
