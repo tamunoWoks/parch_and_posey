@@ -376,3 +376,4 @@ GROUP BY a.id, a.name
 HAVING SUM(o.total_amt_usd) > 30000
 ORDER BY total;
 ```
+- Which accounts spent less than 1,000 usd total across all orders?
