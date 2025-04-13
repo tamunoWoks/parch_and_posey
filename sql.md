@@ -413,3 +413,12 @@ HAVING w. channel = 'facebook' AND COUNT(*) > 6
 ORDER BY channel_use;
 ```
 - Which account used `facebook` most as a **channel**?
+```sql
+SELECT a.id, a.name, w.channel, COUNT(*) channel_use
+FROM accounts a
+JOIN web_events w On a.id = w.account_id
+GROUP BY a.id, a.name, w.channel
+HAVING w.channel = 'facebook'
+ORDER BY channel_use DESC
+LIMIT 1;
+```
