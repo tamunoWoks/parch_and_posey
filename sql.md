@@ -367,3 +367,4 @@ GROUP BY a.id, a.name
 ORDER BY most_orders DESC
 LIMIT 1;
 ```
+- Which accounts spent more than 30,000 usd total across all orders?
