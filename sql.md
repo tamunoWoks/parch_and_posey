@@ -249,7 +249,7 @@ On a.id = o.account_id
 GROUP BY a.name
 ORDER BY min_order;
 ```
-Sort of strange we have a bunch of orders with no dollars. We might want to look into those.
+**Note:** Sort of strange we have a bunch of orders with no dollars. We might want to look into those.
 - Find the number of **sales reps** in each region. Your final table should have two columns the **region** and the number of **sales_reps**. Order from fewest reps to most reps.
 ```sql
 SELECT r.name, COUNT(*) num_reps
@@ -314,7 +314,7 @@ JOIN region r ON r.id = s.region_id;
 SELECT DISTINCT id, name
 FROM accounts;
 ```
-The two queries have the same number of resulting rows (351), so we know that every account is associated with only one region. If each account was associated with more than one region, the first query should have returned more rows than the second query.
+**Note:** The two queries have the same number of resulting rows (351), so we know that every account is associated with only one region. If each account was associated with more than one region, the first query should have returned more rows than the second query.
 - Have any sales reps worked on more than one account?
 ```sql
 SELECT s.id , s.name, COUNT(*) num_acc
@@ -328,7 +328,7 @@ Actually all of the sales reps have worked on more than one account. The fewest 
 SELECT DISTINCT id, name
 FROM sales_reps;
 ```
-Using DISTINCT in the second query assures that all of the sales reps are accounted for in the first query.
+**Note:** Using DISTINCT in the second query assures that all of the sales reps are accounted for in the first query.
 - How many of the sales reps have more than 5 accounts that they manage?
 ```sql
 SELECT s.id, s.name, COUNT(*) num_accounts
@@ -338,7 +338,7 @@ GROUP BY s.id, s.name
 HAVING COUNT(*) > 5
 ORDER BY num_accounts;
 ```
-Technically, we can get this using a **SUBQUERY** as shown below. This same logic can be used for the other queries.
+**Note:** Technically, we can get this using a **SUBQUERY** as shown below. This same logic can be used for the other queries.
 ```sql
 SELECT COUNT(*) num_reps_above5
 FROM(SELECT s.id, s.name, COUNT(*) num_accounts
