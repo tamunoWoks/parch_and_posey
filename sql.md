@@ -385,3 +385,4 @@ GROUP BY a.id, a.name
 HAVING SUM(o.total_amt_usd) < 1000
 ORDER BY total;
 ```
+- Which account has spent the most with us?
