@@ -432,3 +432,4 @@ GROUP BY a.id, a.name, w.channel
 ORDER BY channel_use DESC
 LIMIT 10;
 ```
+**Note:** All of the top 10 are `direct`.
