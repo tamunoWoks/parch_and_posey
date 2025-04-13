@@ -403,3 +403,4 @@ GROUP BY a.id, a.name
 ORDER BY total
 LIMIT 1;
 ```
+- Which accounts used `facebook` as a **channel** to contact customers more than 6 times?
