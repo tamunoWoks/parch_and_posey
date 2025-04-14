@@ -433,7 +433,7 @@ ORDER BY channel_use DESC
 LIMIT 10;
 ```
 **Note:** All of the top 10 are `direct`.
-- Find the sales in terms of total dollars for all orders in each `year`, ordered from greatest to least.
+- Find the sales in terms of total dollars for all orders in each `year`, ordered from greatest to least. Do you notice any trends in the yearly sales totals?
 ```sql
 SELECT DATE_PART('year', occurred_at) ord_year,  SUM(total_amt_usd) total_spent
 FROM orders
@@ -450,7 +450,7 @@ GROUP BY 1, 2
 ORDER BY 1 DESC;
 ```
 **Note:** If we look further at the monthly data, we see that for 2013 and 2017 there is only one month of sales for each of these years (12 for 2013 and 1 for 2017). Therefore, neither of these are evenly represented.
-- Which month did Parch & Posey have the greatest sales in terms of total dollars? 
+- Which month did Parch & Posey have the greatest sales in terms of total dollars? Are all months evenly represented by the dataset?
 ```sql
 SELECT DATE_PART('month', occurred_at) ord_mth,
        SUM(total_amt_usd) total_amt
@@ -468,3 +468,4 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 **Note:** The greatest sales amounts occur in December (12).
+- Which year did Parch & Posey have the greatest sales in terms of total number of orders? Are all years evenly represented by the dataset?
