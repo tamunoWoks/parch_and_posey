@@ -467,3 +467,4 @@ WHERE occurred_at BETWEEN '2014-01-01' AND '2017-01-01'
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+**Note:** The greatest sales amounts occur in December (12).
