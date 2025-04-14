@@ -451,3 +451,10 @@ ORDER BY 1 DESC;
 ```
 **Note:** If we look further at the monthly data, we see that for 2013 and 2017 there is only one month of sales for each of these years (12 for 2013 and 1 for 2017). Therefore, neither of these are evenly represented.
 - Which month did Parch & Posey have the greatest sales in terms of total dollars? 
+```sql
+SELECT DATE_PART('month', occurred_at) ord_mth,
+       SUM(total_amt_usd) total_amt
+FROM orders
+GROUP BY 1
+ORDER BY 2 DESC;
+```
