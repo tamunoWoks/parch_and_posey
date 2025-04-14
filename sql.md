@@ -498,3 +498,4 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
 ```
+**Note:** May 2016 was when Walmart spent the most on gloss paper.
