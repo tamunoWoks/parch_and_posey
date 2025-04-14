@@ -433,3 +433,4 @@ ORDER BY channel_use DESC
 LIMIT 10;
 ```
 **Note:** All of the top 10 are `direct`.
+- Find the sales in terms of total dollars for all orders in each `year`, ordered from greatest to least.
