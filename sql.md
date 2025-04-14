@@ -476,3 +476,4 @@ FROM orders
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+**Note:** Again, 2016 by far has the most amount of orders, but again 2013 and 2017 are not evenly represented to the other years in the dataset.
