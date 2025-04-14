@@ -458,3 +458,4 @@ FROM orders
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+**Note:** In order for this to be 'fair', we should remove the sales from 2013 and 2017. For the same reasons as discussed above.
