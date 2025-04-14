@@ -459,3 +459,11 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 **Note:** In order for this to be 'fair', we should remove the sales from 2013 and 2017. For the same reasons as discussed above.
+```sql
+SELECT DATE_PART('month', occurred_at) ord_mth,
+       SUM(total_amt_usd) total_amt
+FROM orders
+WHERE occurred_at BETWEEN '2014-01-01' AND '2017-01-01'
+GROUP BY 1
+ORDER BY 2 DESC;
+```
