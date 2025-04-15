@@ -505,3 +505,8 @@ SELECT id, account_id, standard_amt_usd/standard_qty AS unit_price
 FROM orders
 ```
 **Note:** We were thrown an error for a division by zero. We can use a CASE statement to solve this. This way any time the standard_qty is zero, we will return 0, and otherwise we will return the unit_price.
+```sql
+SELECT account_id, CASE WHEN standard_qty = 0 OR standard_qty IS NULL THEN 0
+                        ELSE standard_amt_usd/standard_qty END AS unit_price
+FROM orders
+```
