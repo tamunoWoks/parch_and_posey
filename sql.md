@@ -545,3 +545,4 @@ JOIN orders o ON a.id = o.account_id
 GROUP BY a.name
 ORDER BY 2 DESC;
 ```
+- We would now like to perform a similar calculation to the first, but we want to obtain the total amount spent by customers only in 2016 and 2017. Keep the same levels as in the previous question. Order with the top spending customers listed first.
