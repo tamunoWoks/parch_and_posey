@@ -510,3 +510,4 @@ SELECT account_id, CASE WHEN standard_qty = 0 OR standard_qty IS NULL THEN 0
                         ELSE standard_amt_usd/standard_qty END AS unit_price
 FROM orders
 ```
+**Note:** The first part of the statement will catch any of those division by zero values that were causing the error, and the other components will compute the division as necessary. You will notice, we essentially charge all of our accounts 4.99 for standard paper. It makes sense this doesn't fluctuate, and it is more accurate than adding 1 in the denominator like our quick fix earlier.
