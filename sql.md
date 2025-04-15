@@ -572,3 +572,4 @@ JOIN sales_reps s ON s.id = a.sales_rep_id
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+**Note:** It is worth mentioning that this assumes each name is unique - which has been done a few times. We otherwise would want to break by the name and the id of the table.
