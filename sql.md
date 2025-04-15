@@ -546,3 +546,16 @@ GROUP BY a.name
 ORDER BY 2 DESC;
 ```
 - We would now like to perform a similar calculation to the first, but we want to obtain the total amount spent by customers only in 2016 and 2017. Keep the same levels as in the previous question. Order with the top spending customers listed first.
+```sql
+SELECT a.name, SUM(total_amt_usd) total_spent,
+   CASE 
+     WHEN SUM(total_amt_usd) > 200000 THEN 'High'
+     WHEN SUM(total_amt_usd) <= 200000 AND SUM(total_amt_usd) >= 100000 THEN 'mid'
+     ELSE 'low'
+   END AS customer_level
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+WHERE occurred_at > '2015-12-31' 
+GROUP BY a.name
+ORDER BY 2 DESC;
+```
