@@ -31,3 +31,4 @@ ORDER BY 2 DESC;
 SELECT DATE_TRUNC('month', MIN(occurred_at)) 
 FROM orders;
 ```
+- Use the result from the previous query to find only the orderrs that took place in the same month and year as the first order, and then pull the average for each type of paper `qty` in this month.
