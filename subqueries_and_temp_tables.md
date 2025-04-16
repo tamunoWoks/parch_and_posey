@@ -25,3 +25,4 @@ FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
 GROUP BY channel
 ORDER BY 2 DESC;
 ```
+**NOTE:** Since we broke out by day earlier, this query gives us the daily average.
