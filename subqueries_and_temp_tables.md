@@ -27,3 +27,7 @@ ORDER BY 2 DESC;
 ```
 **NOTE:** Since we broke out by day earlier, this query gives us the daily average.
 - Use **DATE_TRUNC** to pull `month` level information about the first order ever placed in the **orders** table.
+```sql
+SELECT DATE_TRUNC('month', MIN(occurred_at)) 
+FROM orders;
+```
