@@ -1,1 +1,1 @@
-
+- Find the number of events that occur for each day for each channel
