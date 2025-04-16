@@ -15,3 +15,4 @@ FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
           GROUP BY 1,2
           ORDER BY 3 DESC) sub;
 ```
+- Now find the average number of events for each channel.
