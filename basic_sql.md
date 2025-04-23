@@ -25,3 +25,4 @@ FROM orders
 ORDER BY total_amt_usd
 LIMIT 20;
 ```
+- Write a query that displays the order ID, account ID, and total dollar amount for all the orders, sorted first by the account ID (in ascending order), and then by the total dollar amount (in descending order).
