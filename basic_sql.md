@@ -141,3 +141,7 @@ SELECT *
 FROM orders
 WHERE standard_qty > 1000 AND poster_qty = 0 AND gloss_qty = 0;
 ```
+- Using the **accounts** table, find all the companies whose names do not start with 'C' and end with 's'.
+SELECT name
+FROM accounts
+WHERE name NOT LIKE 'C%' AND name LIKE '%s';
