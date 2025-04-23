@@ -123,3 +123,9 @@ SELECT *
 FROM accounts
 WHERE name NOT LIKE 'C%';
 ```
+- Use the accounts table to find all companies whose names do not contain the string 'one' somewhere in the name.
+```sql
+SELECT *
+FROM accounts
+WHERE name NOT LIKE '%one%';
+```
