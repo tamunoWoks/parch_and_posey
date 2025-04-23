@@ -87,3 +87,9 @@ SELECT name
 FROM accounts
 WHERE name LIKE '%one%';
 ```
+- Use the accounts table to find all companies whose names end with 's'.
+```sql
+SELECT name
+FROM accounts
+WHERE name LIKE '%s';
+```
