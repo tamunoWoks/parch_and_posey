@@ -81,3 +81,9 @@ SELECT name
 FROM accounts
 WHERE name LIKE 'C%';
 ```
+- Use the accounts table to find all companies whose names contain the string 'one' somewhere in the name.
+```sql
+SELECT name
+FROM accounts
+WHERE name LIKE '%one%';
+```
