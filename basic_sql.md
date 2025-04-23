@@ -11,3 +11,4 @@ FROM orders
 ORDER BY occurred_at
 LIMIT 10;
 ```
+- Write a query to return the top 5 **orders** in terms of largest `total_amt_usd`. Include the `id`, `account_id`, and `total_amt_usd`.
