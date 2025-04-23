@@ -117,3 +117,9 @@ SELECT *
 FROM web_events
 WHERE channel NOT IN ('organic', 'adwords');
 ```
+- Use the accounts table to find all the companies whose names do not start with 'C'.
+```sql
+SELECT *
+FROM accounts
+WHERE name NOT LIKE 'C%';
+```
