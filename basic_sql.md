@@ -153,3 +153,4 @@ SELECT occurred_at, gloss_qty
 FROM orders
 WHERE gloss_qty BETWEEN 24 AND 29;
 ```
+**Note:** You should notice that there are a number of rows in the output of this query where the `gloss_qty` values are 24 or 29. So the answer to the question is that yes, the BETWEEN operator in SQL is inclusive; that is, the endpoint values are included. So the BETWEEN statement in this query is equivalent to having written "WHERE gloss_qty >= 24 AND gloss_qty <= 29."
