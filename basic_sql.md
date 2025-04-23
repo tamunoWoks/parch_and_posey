@@ -75,3 +75,9 @@ SELECT id, account_id,
 FROM orders
 LIMIT 10;
 ```
+- Use the accounts table to find all the companies whose names start with 'C'.
+```sql
+SELECT name
+FROM accounts
+WHERE name LIKE 'C%';
+```
