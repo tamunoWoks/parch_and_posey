@@ -129,3 +129,9 @@ SELECT *
 FROM accounts
 WHERE name NOT LIKE '%one%';
 ```
+- Use the accounts table to find all companies whose names do not end with 's'.
+```sql
+SELECT *
+FROM accounts 
+WHERE name NOT LIKE '%s';
+```
