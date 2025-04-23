@@ -67,3 +67,4 @@ SELECT id,
 FROM orders
 LIMIT 10;
 ```
+- Write a query that finds the percentage of revenue that comes from poster paper for each order. You will need to use only the columns that end with _usd. (Try to do this without using the total column.) Display the id and account_id fields also. Limit to first 10 orders.
