@@ -4,3 +4,4 @@ SELECT occurred_at, account_id, channel
 FROM web_events
 LIMIT 15;
 ```
+- Write a query to return the 10 earliest orders in the **orders** table. Include the `id`, `occurred_at`, and `total_amt_usd`.
