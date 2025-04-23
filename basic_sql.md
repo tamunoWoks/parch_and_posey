@@ -141,3 +141,4 @@ SELECT name, primary_poc, sales_rep_id
 FROM accounts
 WHERE name NOT IN ('Walmart', 'Target', 'Nordstrom');
 ```
+- Use the **web_events** table to find all information regarding individuals who were contacted via any method except using `organic` or `adwords` methods.
