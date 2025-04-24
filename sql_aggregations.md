@@ -31,3 +31,8 @@ SELECT SUM(standard_amt_usd)/SUM(standard_qty) AS standard_price_per_unit
 FROM orders;
 ```
 **Note:** This solution used both an aggregate and our mathematical operators
+- When was the earliest order ever placed?
+```sql
+SELECT MIN(occurred_at) 
+FROM orders;
+```
