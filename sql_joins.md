@@ -95,6 +95,10 @@ ON o.account_id = a.id
 WHERE o.standard_qty > 100 AND o.poster_qty > 50
 ORDER BY unit_price DESC;
 ```
+- What are the different **channels** used by **account id** `1001`? Your final table should have only 2 columns: **account name** and the different **channels**. You can try **SELECT DISTINCT** to narrow down the results to only the unique values.
+```sql
+
+```
 - Which **account** (by name) placed the earliest order? Your solution should have the **account name** and the **date** of the order.
 ```sql
 SELECT a.name, o.occurred_at
