@@ -62,3 +62,14 @@ SELECT AVG(standard_qty) mean_standard, AVG(gloss_qty) mean_gloss,
               AVG(gloss_amt_usd) mean_gloss_usd, AVG(poster_amt_usd) mean_poster_usd
 FROM orders;
 ```
+- Lets's hard code the **MEDIAN**
+```sql
+SELECT *
+FROM (SELECT total_amt_usd
+         FROM orders
+         ORDER BY total_amt_usd
+         LIMIT 3457) AS Table1
+ORDER BY total_amt_usd DESC
+LIMIT 2;
+```
+**Note:** This is more advanced than the topics we have covered thus far to build a general solution. The above used a SUBQUERY, but you could use any method to find the two necessary values
