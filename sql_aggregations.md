@@ -36,3 +36,10 @@ FROM orders;
 SELECT MIN(occurred_at) 
 FROM orders;
 ```
+- Try performing the same query without using an aggregation function.
+```sql
+SELECT occurred_at 
+FROM orders 
+ORDER BY occurred_at
+LIMIT 1;
+```
