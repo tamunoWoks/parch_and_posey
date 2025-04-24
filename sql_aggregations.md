@@ -171,6 +171,14 @@ ON r.id = s.region_id
 GROUP BY r.name, w.channel
 ORDER BY num_events DESC;
 ```
+- What are the different **channels** used by **account id** `1001`? Your final table should have only 2 columns: **account name** and the different **channels**. You can try **SELECT DISTINCT** to narrow down the results to only the unique values.
+```sql
+SELECT DISTINCT a.name, w.channel
+FROM accounts a
+JOIN web_events w
+ON a.id = w.account_id
+WHERE a.id = '1001';
+```
 - Use DISTINCT to test if there are any **accounts** associated with more than one **region**.
 ```sql
 SELECT a.id as "account id", r.id as "region id", 
