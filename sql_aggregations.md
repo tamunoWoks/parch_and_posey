@@ -19,3 +19,9 @@ FROM orders;
 SELECT SUM(total_amt_usd) AS total_dollar_sales
 FROM orders;
 ```
+- Find the total amount for each individual order that was spent on **standard** and **gloss** paper in the orders table. This should give a dollar amount for each order in the table.
+```sql
+SELECT standard_amt_usd + gloss_amt_usd AS total_standard_gloss
+FROM orders;
+```
+**Note:** This solution did not use an aggregate.
