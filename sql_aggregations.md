@@ -171,7 +171,7 @@ ON r.id = s.region_id
 GROUP BY r.name, w.channel
 ORDER BY num_events DESC;
 ```
-- Use DISTINCT to test if there are any accounts associated with more than one region.
+- Use DISTINCT to test if there are any **accounts** associated with more than one **region**.
 ```sql
 SELECT a.id as "account id", r.id as "region id", 
 a.name as "account name", r.name as "region name"
@@ -197,7 +197,7 @@ SELECT DISTINCT id, name
 FROM sales_reps;
 ```
 **Note:** Using DISTINCT in the second query assures that all of the sales reps are accounted for in the first query.
-- How many of the sales reps have more than 5 accounts that they manage?
+- How many of the **sales reps** have more than 5 accounts that they manage?
 ```sql
 SELECT s.id, s.name, COUNT(*) num_accounts
 FROM accounts a
@@ -216,4 +216,13 @@ FROM(SELECT s.id, s.name, COUNT(*) num_accounts
         GROUP BY s.id, s.name
         HAVING COUNT(*) > 5
         ORDER BY num_accounts) AS Table1;
+```
+- How many **accounts** have more than 20 orders?
+```sql
+SELECT a.id, a.name, COUNT(*) num_orders
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING COUNT(*) > 20
+ORDER BY num_orders;
 ```
