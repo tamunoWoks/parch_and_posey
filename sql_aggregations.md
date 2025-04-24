@@ -43,3 +43,8 @@ FROM orders
 ORDER BY occurred_at
 LIMIT 1;
 ```
+- When did the most recent (latest) **web_event** occur?
+```sql
+SELECT MAX(occurred_at)
+FROM web_events;
+```
