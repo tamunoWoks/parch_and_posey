@@ -48,3 +48,10 @@ LIMIT 1;
 SELECT MAX(occurred_at)
 FROM web_events;
 ```
+- let's perform the result of the previous query without using an aggregation function.
+```sql
+SELECT occurred_at
+FROM web_events
+ORDER BY occurred_at DESC
+LIMIT 1;
+```
