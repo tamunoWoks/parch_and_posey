@@ -73,3 +73,12 @@ ORDER BY total_amt_usd DESC
 LIMIT 2;
 ```
 **Note:** This is more advanced than the topics we have covered thus far to build a general solution. The above used a SUBQUERY, but you could use any method to find the two necessary values
+- Which **account** (by name) placed the earliest order? Your solution should have the **account name** and the **date** of the order.
+```sql
+SELECT a.name, o.occurred_at
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+ORDER BY o.occurred_at
+LIMIT 1;
+```
