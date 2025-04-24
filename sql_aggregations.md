@@ -366,6 +366,18 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
 ```
+- Create a column that divides the `standard_amt_usd` by the `standard_qty` to find the `unit price` for standard paper for each order. Limit the results to the first 10 orders, and include the `id` and `account_id` fields.
+```sql
+SELECT id, account_id, standard_amt_usd/standard_qty AS unit_price
+FROM orders
+```
+**Note:** We were thrown an error for a division by zero. We can use a CASE statement to solve this. This way any time the standard_qty is zero, we will return 0, and otherwise we will return the unit_price.
+```sql
+SELECT account_id, CASE WHEN standard_qty = 0 OR standard_qty IS NULL THEN 0
+                        ELSE standard_amt_usd/standard_qty END AS unit_price
+FROM orders
+```
+**Note:** The first part of the statement will catch any of those division by zero values that were causing the error, and the other components will compute the division as necessary. You will notice, we essentially charge all of our accounts 4.99 for standard paper. It makes sense this doesn't fluctuate, and it is more accurate than adding 1 in the denominator like our quick fix earlier.
 **Note:** May 2016 was when Walmart spent the most on gloss paper.
 - Write a query to display for each order, the account ID, total amount of the order, and the level of the order - ‘Large’ or ’Small’ - depending on if the order is $3000 or more, or less than $3000.
 ```sql
