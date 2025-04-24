@@ -25,3 +25,9 @@ SELECT standard_amt_usd + gloss_amt_usd AS total_standard_gloss
 FROM orders;
 ```
 **Note:** This solution did not use an aggregate.
+- Though the **price/standard_qty** paper varies from one order to the next. I would like this ratio across all of the sales made in the **orders** table.
+```sql
+SELECT SUM(standard_amt_usd)/SUM(standard_qty) AS standard_price_per_unit
+FROM orders;
+```
+**Note:** This solution used both an aggregate and our mathematical operators
