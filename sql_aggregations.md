@@ -253,3 +253,12 @@ GROUP BY a.id, a.name
 HAVING SUM(o.total_amt_usd) < 1000
 ORDER BY total;
 ```
+- Which account has spent the most?
+```sql
+SELECT a.id, a.name, SUM(o.total_amt_usd) total
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY total DESC
+LIMIT 1;
+```
