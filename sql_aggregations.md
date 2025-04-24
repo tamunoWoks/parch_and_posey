@@ -14,3 +14,8 @@ FROM orders;
 SELECT SUM(standard_qty) AS total_standard_sales
 FROM orders;
 ```
+- Find the total dollar amount of sales using the **total_amt_usd** in the **orders** table.
+```sql
+SELECT SUM(total_amt_usd) AS total_dollar_sales
+FROM orders;
+```
