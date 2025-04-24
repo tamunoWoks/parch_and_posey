@@ -262,3 +262,12 @@ GROUP BY a.id, a.name
 ORDER BY total DESC
 LIMIT 1;
 ```
+- Which account has spent the least?
+```sql
+SELECT a.id, a.name, SUM(o.total_amt_usd) total
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY total
+LIMIT 1;
+```
