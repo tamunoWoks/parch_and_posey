@@ -103,6 +103,10 @@ JOIN web_events w
 ON a.id = w.account_id
 WHERE a.id = '1001';
 ```
+- Find all the orders that occurred in 2015. Your final table should have 4 columns: occurred_at, account name, order total, and order total_amt_usd.
+```sql
+
+```
 - Which **account** (by name) placed the earliest order? Your solution should have the **account name** and the **date** of the order.
 ```sql
 SELECT a.name, o.occurred_at
