@@ -271,3 +271,12 @@ GROUP BY a.id, a.name
 ORDER BY total
 LIMIT 1;
 ```
+- Which accounts used `facebook` as a **channel** to contact customers more than 6 times?
+```sql
+SELECT a.id, a.name, w.channel, COUNT(*) channel_use
+FROM accounts a
+JOIN web_events w ON a.id = w.account_id
+GROUP BY a.id, a.name, w.channel
+HAVING w. channel = 'facebook' AND COUNT(*) > 6
+ORDER BY channel_use;
+```
