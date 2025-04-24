@@ -280,3 +280,14 @@ GROUP BY a.id, a.name, w.channel
 HAVING w. channel = 'facebook' AND COUNT(*) > 6
 ORDER BY channel_use;
 ```
+- Which account used `facebook` most as a **channel**?
+```sql
+SELECT a.id, a.name, w.channel, COUNT(*) channel_use
+FROM accounts a
+JOIN web_events w On a.id = w.account_id
+GROUP BY a.id, a.name, w.channel
+HAVING w.channel = 'facebook'
+ORDER BY channel_use DESC
+LIMIT 1;
+```
+**Note:** This query above only works if there are no ties for the account that used facebook the most. It is a best practice to use a larger limit number first such as 3 or 5 to see if there are ties before using LIMIT 1.
