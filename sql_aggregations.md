@@ -336,3 +336,12 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 **Note:** The greatest sales amounts occur in December (12).
+- Which **year** did Parch & Posey have the greatest sales in terms of total number of orders? Are all years evenly represented by the dataset?
+```sql
+SELECT DATE_PART('year', occurred_at) ord_yr,
+       COUNT(*) total_sales
+FROM orders
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+**Note:** Again, 2016 by far has the most amount of orders, but again 2013 and 2017 are not evenly represented to the other years in the dataset.
