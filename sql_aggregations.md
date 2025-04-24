@@ -9,3 +9,8 @@ GROUP BY channel;
 SELECT SUM(poster_qty) AS total_poster_sales
 FROM orders;
 ```
+- Find the total amount of **standard_qty** paper ordered in the **order** table.
+```sql
+SELECT SUM(standard_qty) AS total_standard_sales
+FROM orders;
+```
