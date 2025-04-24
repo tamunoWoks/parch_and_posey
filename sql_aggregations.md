@@ -235,3 +235,12 @@ GROUP BY a.id, a.name
 ORDER BY most_orders DESC
 LIMIT 1;
 ```
+- Which accounts spent more than 30,000 usd total across all orders?
+```sql
+SELECT a.id, a.name, SUM(o.total_amt_usd) as total
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING SUM(o.total_amt_usd) > 30000
+ORDER BY total;
+```
