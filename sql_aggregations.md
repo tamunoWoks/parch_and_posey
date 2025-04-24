@@ -226,3 +226,12 @@ GROUP BY a.id, a.name
 HAVING COUNT(*) > 20
 ORDER BY num_orders;
 ```
+- Which account has the most orders?
+```sql
+SELECT a.id, a.name, COUNT(*) most_orders
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY most_orders DESC
+LIMIT 1;
+```
