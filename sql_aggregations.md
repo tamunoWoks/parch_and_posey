@@ -355,3 +355,15 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 **Note:** December still has the most sales, but interestingly, November has the second most sales (but not the most dollar sales. To make a fair comparison from one month to another 2017 and 2013 data were removed.
+- In which **month** of which **year** did `Walmart` spend the most on gloss paper in terms of dollars?
+```sql
+SELECT DATE_TRUNC('month', o.occurred_at) ord_date,
+       SUM(gloss_amt_usd) tot_gloss_amt
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+WHERE a.name = 'Walmart'
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 1;
+```
+**Note:** May 2016 was when Walmart spent the most on gloss paper.
