@@ -318,3 +318,21 @@ GROUP BY 1, 2
 ORDER BY 1 DESC;
 ```
 **Note:** If we look further at the monthly data, we see that for 2013 and 2017 there is only one month of sales for each of these years (12 for 2013 and 1 for 2017). Therefore, neither of these are evenly represented.
+- Which **month** did Parch & Posey have the greatest sales in terms of total dollars? Are all months evenly represented by the dataset?
+```sql
+SELECT DATE_PART('month', occurred_at) ord_mth,
+       SUM(total_amt_usd) total_amt
+FROM orders
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+**Note:** In order for this to be 'fair', we should remove the sales from 2013 and 2017. For the same reasons as discussed above.
+```sql
+SELECT DATE_PART('month', occurred_at) ord_mth,
+       SUM(total_amt_usd) total_amt
+FROM orders
+WHERE occurred_at BETWEEN '2014-01-01' AND '2017-01-01'
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+**Note:** The greatest sales amounts occur in December (12).
