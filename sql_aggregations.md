@@ -345,3 +345,13 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 **Note:** Again, 2016 by far has the most amount of orders, but again 2013 and 2017 are not evenly represented to the other years in the dataset.
+- Which **month** did Parch & Posey have the greatest sales in terms of total number of orders? Are all months evenly represented by the dataset?
+```sql
+SELECT DATE_PART('month', occurred_at) ord_mth,
+       COUNT(*) total_sales
+FROM orders
+WHERE occurred_at BETWEEN '2014-01-01' AND '2017-01-01'
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+**Note:** December still has the most sales, but interestingly, November has the second most sales (but not the most dollar sales. To make a fair comparison from one month to another 2017 and 2013 data were removed.
