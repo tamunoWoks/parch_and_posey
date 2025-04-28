@@ -1,5 +1,5 @@
 ## Basic SQL
-Here we will try out some examples for Basic SQL concepts such as , `SELECT`, `FROM`, `LIMIT`, `WHERE`, `IN`, `ORDER BY`, `NOT`, `AND`, `BETWEEN` and `OR` alongside Arithmetic and Logical operators.  
+Here we will try out some examples for Basic SQL concepts such as `SELECT`, `FROM`, `LIMIT`, `WHERE`, `IN`, `ORDER BY`, `NOT`, `AND`, `BETWEEN` and `OR` alongside Arithmetic and Logical operators.  
 
 **Examples**
 - Write a query that displays all the data in the occurred_at, account_id, and channel columns of the web_events table, and limits the output to only the first 15 rows.
