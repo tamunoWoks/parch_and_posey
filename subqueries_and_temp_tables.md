@@ -1,3 +1,7 @@
+## Subqueries & Temp Tables
+Here we will try out some examples that implement Subqueries & Temp tables in SQL alongside concepts like `WITH`.  
+
+**Examples**
 - Find the number of events that occur for each day for each channel
 ```sql
 SELECT DATE_TRUNC('day',occurred_at) AS day,
