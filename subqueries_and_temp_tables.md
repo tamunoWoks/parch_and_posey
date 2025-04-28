@@ -34,16 +34,19 @@ ORDER BY 2 DESC;
 SELECT DATE_TRUNC('month', MIN(occurred_at)) 
 FROM orders;
 ```
-- Use the result from the previous query to find only the orderrs that took place in the same month and year as the first order, and then pull the average for each type of paper `qty` in this month.
+- Use the result from the previous query to find only the orders that took place in the same month and year as the first order.
 ```sql
-SELECT AVG(standard_qty) avg_std, AVG(gloss_qty) avg_gls, AVG(poster_qty) avg_pst
+SELECT AVG(standard_qty) avg_std,
+       AVG(gloss_qty) avg_gls,
+       AVG(poster_qty) avg_pst
 FROM orders
-WHERE DATE_TRUNC('month', occurred_at) = 
-     (SELECT DATE_TRUNC('month', MIN(occurred_at)) FROM orders);
+WHERE DATE_TRUNC('month', occurred_at) = (SELECT DATE_TRUNC('month', MIN(occurred_at))
+                                          FROM orders);
 ```
+- Use the same result to pull the average for each type of paper `qty` in this month.
 ```sql
 SELECT SUM(total_amt_usd)
 FROM orders
-WHERE DATE_TRUNC('month', occurred_at) = 
-      (SELECT DATE_TRUNC('month', MIN(occurred_at)) FROM orders);
+WHERE DATE_TRUNC('month', occurred_at) = (SELECT DATE_TRUNC('month', MIN(occurred_at))
+                                          FROM orders);
 ```
