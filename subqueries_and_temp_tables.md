@@ -77,3 +77,22 @@ ORDER BY 2 DESC;
 ```
 
 To finalize, let us JOIN two tables, where the region and amount match.
+```sql
+SELECT t3.rep, t3.reg, t3.total
+FROM (SELECT reg, MAX(total) as total
+      FROM(SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
+           FROM sales_reps s 
+           JOIN accounts a ON a.sales_rep_id = s.id
+           JOIN orders o ON a.id = o.account_id
+           JOIN region r ON r.id = s.region_id
+           GROUP BY 1, 2) as t1
+      GROUP BY 1) as t2
+JOIN (SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
+      FROM sales_reps s 
+      JOIN accounts a ON a.sales_rep_id = s.id
+      JOIN orders o ON a.id = o.account_id
+      JOIN region r ON r.id = s.region_id
+      GROUP BY 1, 2
+      ORDER BY 3 DESC) as t3
+ON t3.reg = t2.reg AND t3.total = t2.total;
+```
