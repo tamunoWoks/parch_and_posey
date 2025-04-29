@@ -50,5 +50,14 @@ FROM orders
 WHERE DATE_TRUNC('month', occurred_at) = (SELECT DATE_TRUNC('month', MIN(occurred_at))
                                           FROM orders);
 ```
-- Provide the name of the sales_rep in each region with the largest amount of total_amt_usd sales.  
+- Provide the name of the sales_rep in each region with the largest amount of total_amt_usd sales:  
 First, we to find the total_amt_usd totals associated with each sales rep, and the region in which they were located. The query below provided this information.  
+```sql
+SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
+FROM sales_reps s 
+JOIN accounts a ON a.sales_rep_id = s.id
+JOIN orders o ON a.id = o.account_id
+JOIN region r ON r.id = s.region_id
+GROUP BY 1, 2
+ORDER BY 3;
+```
