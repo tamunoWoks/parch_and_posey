@@ -75,3 +75,5 @@ SELECT reg, MAX(total) as total
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+
+To finalize, let us JOIN two tables, where the region and amount match.
