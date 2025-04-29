@@ -61,4 +61,6 @@ JOIN orders o ON a.id = o.account_id
 JOIN region r ON r.id = s.region_id
 GROUP BY 1, 2
 ORDER BY 3;
-```
+```  
+
+Next, we the max for each region, and then we can use this to pull those rows in our final result.
