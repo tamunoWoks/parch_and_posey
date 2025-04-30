@@ -1,9 +1,9 @@
-BEGIN TRANSACTION;
+BEGIN;
 CREATE TABLE web_events (
-	id integer,
+	id integer PRIMARY KEY NOT NULL,
 	account_id integer,
 	occurred_at timestamp,
-	channel bpchar
+	channel varchar
 );
 INSERT INTO web_events VALUES (1,1001,'2015-10-06 17:13:58','direct');
 INSERT INTO web_events VALUES (2,1001,'2015-11-05 03:08:26','direct');
@@ -9079,8 +9079,8 @@ INSERT INTO web_events VALUES (9071,4491,'2016-11-06 07:23:45','organic');
 INSERT INTO web_events VALUES (9072,4491,'2016-12-18 03:21:31','organic');
 INSERT INTO web_events VALUES (9073,4501,'2016-05-30 00:46:53','organic');
 CREATE TABLE sales_reps (
-	id integer,
-	name bpchar,
+	id integer PRIMARY KEY NOT NULL,
+	name varchar,
 	region_id integer
 );
 INSERT INTO sales_reps VALUES (321500,'Samuel Racine',1);
@@ -9134,15 +9134,15 @@ INSERT INTO sales_reps VALUES (321970,'Georgianna Chisholm',4);
 INSERT INTO sales_reps VALUES (321980,'Micha Woodford',4);
 INSERT INTO sales_reps VALUES (321990,'Dawna Agnew',4);
 CREATE TABLE region (
-	id integer,
-	name bpchar
+	id integer PRIMARY KEY NOT NULL,
+	name varchar
 );
 INSERT INTO region VALUES (1,'Northeast');
 INSERT INTO region VALUES (2,'Midwest');
 INSERT INTO region VALUES (3,'Southeast');
 INSERT INTO region VALUES (4,'West');
 CREATE TABLE orders (
-	id integer,
+	id integer PRIMARY KEY NOT NULL,
 	account_id integer,
 	occurred_at timestamp,
 	standard_qty integer,
@@ -16067,12 +16067,12 @@ INSERT INTO orders VALUES (6910,4501,'2016-08-27 00:58:11',16,94,82,192,79.84,70
 INSERT INTO orders VALUES (6911,4501,'2016-11-22 06:52:22',63,67,81,211,314.37,501.83,657.72,1473.92);
 INSERT INTO orders VALUES (6912,4501,'2016-12-21 13:30:42',61,150,52,263,304.39,1123.5,422.24,1850.13);
 CREATE TABLE accounts (
-	id integer,
-	name bpchar,
-	website bpchar,
+	id integer PRIMARY KEY NOT NULL,
+	name varchar,
+	website varchar,
 	lat numeric(11,8),
 	long numeric(11,8),
-	primary_poc bpchar,
+	primary_poc varchar,
 	sales_rep_id integer
 );
 INSERT INTO accounts VALUES (1001,'Walmart','www.walmart.com',40.23849561,-75.10329704,'Tamara Tuma',321500);
