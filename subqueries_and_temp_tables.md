@@ -131,3 +131,18 @@ ORDER BY 2 DESC
 LIMIT 1;
 ```
 Finally, we want to pull the total orders for the region with this amount:
+```sql
+SELECT r.name, COUNT(o.total) as total_orders
+FROM sales_reps s 
+JOIN accounts a ON s.id = a.sales_rep_id
+JOIN orders o ON o.account_id = a.id
+JOIN region r ON r.id = s.region_id
+GROUP BY r.name
+HAVING SUM(o.total_amt_usd) = (SELECT MAX(total_sales)
+				FROM (SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
+					FROM sales_reps s 
+					JOIN region r ON r.id = s.region_id
+					JOIN accounts a ON s.id = a.sales_rep_id
+					JOIN orders o ON o.account_id = a.id
+					GROUP BY 1) AS sub);
+```
