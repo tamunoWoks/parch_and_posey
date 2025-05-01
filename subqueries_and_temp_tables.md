@@ -108,3 +108,6 @@ JOIN orders o ON o.account_id = a.id
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+Next let us retrieve the region with the max amount from this table. There are two ways this can be done
+1. One was to pull the max using a subquery.
+2. Another way is to order descending and just pull the top value.
