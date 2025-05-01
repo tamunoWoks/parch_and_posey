@@ -100,7 +100,7 @@ ON t3.reg = t2.reg AND t3.total = t2.total;
 
 We will first write a query to pull the total_amt_usd for each region.  
 ```sql
-SELECT r.name reg_name, SUM(o.total_amt_usd) largest_sales
+SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
 FROM sales_reps s 
 JOIN region r ON r.id = s.region_id
 JOIN accounts a ON s.id = a.sales_rep_id
@@ -112,7 +112,7 @@ Next let us retrieve the region with the max amount from this table. There are t
 1. One was to pull the max using a subquery.
 2. Another way is to order descending and just pull the top value.
 ```sql
-SELECT r.name reg_name, SUM(o.total_amt_usd) largest_sales
+SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
 FROM sales_reps s 
 JOIN region r ON r.id = s.region_id
 JOIN accounts a ON s.id = a.sales_rep_id
