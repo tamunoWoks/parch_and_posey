@@ -146,3 +146,4 @@ HAVING SUM(o.total_amt_usd) = (SELECT MAX(total_sales)
 					JOIN orders o ON o.account_id = a.id
 					GROUP BY 1) AS sub);
 ```
+This provides the Northeast with 2357 orders.
