@@ -98,7 +98,7 @@ ON t3.reg = t2.reg AND t3.total = t2.total;
 ```
 - For the region with the largest sales **total_amt_usd**, how many **total** orders were placed?
 
-We will first write a query to pull the total_amt_usd for each region.  
+We will first write a query to pull the total_amt_usd for each region:  
 ```sql
 SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
 FROM sales_reps s 
@@ -108,7 +108,7 @@ JOIN orders o ON o.account_id = a.id
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
-Next let us retrieve the region with the max amount from this table. There are two ways this can be done
+Next let us retrieve the region with the max amount from this table. There are two ways this can be done:
 1. One was to pull the max using a subquery.
 ```sql
 SELECT MAX(total_sales)
@@ -130,3 +130,4 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
 ```
+Finally, we want to pull the total orders for the region with this amount:
