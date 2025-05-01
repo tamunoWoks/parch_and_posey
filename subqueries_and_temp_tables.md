@@ -98,4 +98,13 @@ ON t3.reg = t2.reg AND t3.total = t2.total;
 ```
 - For the region with the largest sales **total_amt_usd**, how many **total** orders were placed?
 
-We will first write a query to pull the total_amt_usd for each region.
+We will first write a query to pull the total_amt_usd for each region.  
+```sql
+SELECT r.name reg_name, SUM(o.total_amt_usd) largest_sales
+FROM sales_reps s 
+JOIN region r ON r.id = s.region_id
+JOIN accounts a ON s.id = a.sales_rep_id
+JOIN orders o ON o.account_id = a.id
+GROUP BY 1
+ORDER BY 2 DESC;
+```
