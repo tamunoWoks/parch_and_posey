@@ -96,3 +96,4 @@ JOIN (SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
       ORDER BY 3 DESC) as t3
 ON t3.reg = t2.reg AND t3.total = t2.total;
 ```
+- For the region with the largest sales **total_amt_usd**, how many **total** orders were placed?
