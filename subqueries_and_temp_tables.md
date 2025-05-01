@@ -110,6 +110,15 @@ ORDER BY 2 DESC;
 ```
 Next let us retrieve the region with the max amount from this table. There are two ways this can be done
 1. One was to pull the max using a subquery.
+```sql
+SELECT MAX(total_sales)
+	FROM (SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
+			FROM sales_reps s 
+			JOIN region r ON r.id = s.region_id
+			JOIN accounts a ON s.id = a.sales_rep_id
+			JOIN orders o ON o.account_id = a.id
+			GROUP BY 1) AS sub
+```
 2. Another way is to order descending and just pull the top value.
 ```sql
 SELECT r.name reg_name, SUM(o.total_amt_usd) total_sales
