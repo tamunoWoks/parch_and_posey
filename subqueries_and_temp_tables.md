@@ -147,3 +147,4 @@ HAVING SUM(o.total_amt_usd) = (SELECT MAX(total_sales)
 					GROUP BY 1) AS sub);
 ```
 This provides the Northeast with 2357 orders.
+- How many **accounts** had more **total** purchases than the account **name** which has bought the most **standard_qty** paper throughout their lifetime as a customer?
