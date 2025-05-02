@@ -261,3 +261,12 @@ HAVING AVG(o.total_amt_usd) > (SELECT AVG(o.total_amt_usd) avg_all
 				FROM orders o);
 ```
 Finally, we just want the average of these values.
+```sql
+SELECT AVG(avg_amt)
+FROM (SELECT a.id, a.name, AVG(o.total_amt_usd) avg_amt
+	FROM accounts a
+	JOIN orders o ON o.account_id = a.id
+	GROUP BY 1
+	HAVING AVG(o.total_amt_usd) > (SELECT AVG(o.total_amt_usd) avg_all
+					FROM orders o))temp;
+```
