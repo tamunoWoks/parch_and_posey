@@ -195,3 +195,5 @@ FROM (SELECT a.name
 					)outer_tab;
 ```
 - For the customer that spent the most (in total over their lifetime as a customer) **total_amt_usd**, how many **web_events** did they have for each **channel**?
+
+Here, we first want to pull the customer with the most spent in lifetime value.
