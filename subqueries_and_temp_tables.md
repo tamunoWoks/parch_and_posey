@@ -247,3 +247,7 @@ FROM (SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
 - What is the lifetime average amount spent in terms of **total_amt_usd**, including only the companies that spent more per order, on average, than the average of all orders.
 
 First, we want to pull the average of all accounts in terms of **total_amt_usd**: 
+```sql
+SELECT AVG(o.total_amt_usd) avg_all
+FROM orders o
+```
