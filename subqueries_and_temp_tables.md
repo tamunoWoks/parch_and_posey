@@ -148,4 +148,5 @@ HAVING SUM(o.total_amt_usd) = (SELECT MAX(total_sales)
 ```
 This provides the Northeast with 2357 orders.
 - How many **accounts** had more **total** purchases than the account **name** which has bought the most **standard_qty** paper throughout their lifetime as a customer?  
+
 First, we want to find the account that had the most standard_qty paper. The query here pulls that account, as well as the total amount:
