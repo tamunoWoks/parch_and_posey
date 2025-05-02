@@ -177,3 +177,20 @@ HAVING SUM(o.total) > (SELECT total
 				LIMIT 1) sub)
 ```
 This is now a list of all the accounts with more total orders. We can get the count with just another simple subquery.
+```sql
+SELECT COUNT(*)
+FROM (SELECT a.name
+	FROM accounts a
+	JOIN orders o ON o.account_id = a.id
+	GROUP BY 1
+	HAVING SUM(o.total) > (SELECT total
+				FROM (SELECT a.name account_name, 
+						SUM(o.standard_qty) total_std, 
+						SUM(o.total) total
+					FROM accounts a 
+					JOIN orders o ON o.account_id = a.id
+					GROUP BY 1
+					ORDER BY 2 DESC
+					LIMIT 1) inner_tab)
+					)outer_tab;
+```
