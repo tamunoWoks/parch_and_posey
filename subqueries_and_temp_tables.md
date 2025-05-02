@@ -223,4 +223,6 @@ GROUP BY 1, 2
 ORDER BY 3 DESC;
 ```
 We added an ORDER BY to sort the result, and the account name to assure we are pulling from one account.
-- What is the lifetime average amount spent in terms of **total_amt_usd** for the top 10 total spending **accounts**?
+- What is the lifetime average amount spent in terms of **total_amt_usd** for the top 10 total spending **accounts**?  
+
+First, we just want to find the top 10 accounts in terms of highest total_amt_usd.
