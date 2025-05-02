@@ -206,3 +206,19 @@ ORDER BY 3 DESC
 LIMIT 1;
 ```
 Now let's look at the number of events on each channel this company had, which we can match with just the id.
+```sql
+SELECT a.name, w.channel, COUNT(*)
+FROM accounts a
+JOIN web_events w
+ON w.account_id = a.id AND a.id = (SELECT id
+					FROM (SELECT a.id, 
+							a.name, 
+							SUM(o.total_amt_usd) total_spent
+						FROM accounts a
+						JOIN orders o ON o.account_id = a.id
+						GROUP BY 1, 2
+						ORDER BY 3 DESC
+						LIMIT 1)inner_tab)
+GROUP BY 1, 2
+ORDER BY 3 DESC;
+```
