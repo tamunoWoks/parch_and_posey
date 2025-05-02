@@ -251,3 +251,4 @@ First, we want to pull the average of all accounts in terms of **total_amt_usd**
 SELECT AVG(o.total_amt_usd) avg_all
 FROM orders o
 ```
+Then, we want to only pull the accounts with more than this average amount.
