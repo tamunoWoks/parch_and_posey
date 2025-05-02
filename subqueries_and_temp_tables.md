@@ -226,3 +226,11 @@ We added an ORDER BY to sort the result, and the account name to assure we are p
 - What is the lifetime average amount spent in terms of **total_amt_usd** for the top 10 total spending **accounts**?  
 
 First, we just want to find the top 10 accounts in terms of highest total_amt_usd.
+```sql
+SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
+FROM accounts a
+JOIN orders o ON o.account_id = a.id
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 10;
+```
