@@ -150,3 +150,13 @@ This provides the Northeast with 2357 orders.
 - How many **accounts** had more **total** purchases than the account **name** which has bought the most **standard_qty** paper throughout their lifetime as a customer?  
 
 First, we want to find the account that had the most standard_qty paper. The query here pulls that account, as well as the total amount:
+```sql
+SELECT a.name account_name, 
+	SUM(o.standard_qty) total_std, 
+	SUM(o.total) total_amt
+FROM accounts a 
+JOIN orders o ON o.account_id = a.id
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 1;
+```
