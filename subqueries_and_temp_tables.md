@@ -234,3 +234,4 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 LIMIT 10;
 ```
+Now, we just want the average of these 10 amounts.
