@@ -205,3 +205,4 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 LIMIT 1;
 ```
+Now let's look at the number of events on each channel this company had, which we can match with just the id.
