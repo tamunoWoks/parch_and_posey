@@ -29,7 +29,19 @@ FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
 GROUP BY channel
 ORDER BY 2 DESC;
 ```
-Let's apply CTE's for this exact problem.
+Let's apply CTE's for this exact problem.  
+```sql
+WITH events AS (
+          SELECT DATE_TRUNC('day',occurred_at) AS day, 
+                        channel, COUNT(*) as events
+          FROM web_events 
+          GROUP BY 1,2)
+
+SELECT channel, AVG(events) AS average_events
+FROM events
+GROUP BY channel
+ORDER BY 2 DESC;
+```
 - Use **DATE_TRUNC** to pull `month` level information about the first order ever placed in the **orders** table.
 ```sql
 SELECT DATE_TRUNC('month', MIN(occurred_at)) 
