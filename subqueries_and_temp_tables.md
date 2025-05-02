@@ -160,3 +160,4 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
 ```
+Now let us use this to pull all the accounts with more total sales:
