@@ -235,3 +235,12 @@ ORDER BY 3 DESC
 LIMIT 10;
 ```
 Now, we just want the average of these 10 amounts.
+```sql
+SELECT AVG(tot_spent)
+FROM (SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
+	FROM accounts a
+	JOIN orders o ON o.account_id = a.id
+	GROUP BY 1, 2
+	ORDER BY 3 DESC
+	LIMIT 10)temp;
+```
