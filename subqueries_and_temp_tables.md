@@ -222,3 +222,4 @@ ON w.account_id = a.id AND a.id = (SELECT id
 GROUP BY 1, 2
 ORDER BY 3 DESC;
 ```
+We added an ORDER BY to sort the result, and the account name to assure we are pulling from one account.
