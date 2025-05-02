@@ -197,3 +197,11 @@ FROM (SELECT a.name
 - For the customer that spent the most (in total over their lifetime as a customer) **total_amt_usd**, how many **web_events** did they have for each **channel**?
 
 Here, we first want to pull the customer with the most spent in lifetime value.
+```sql
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM accounts a
+JOIN orders o ON o.account_id = a.id
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 1;
+```
