@@ -253,7 +253,7 @@ FROM orders o
 ```
 Then, we want to only pull the accounts with more than this average amount.
 ```sql
-SELECT a.id, a.name, AVG(o.total_amt_usd)
+SELECT a.id, a.name, AVG(o.total_amt_usd) avg_amt
 FROM accounts a
 JOIN orders o ON o.account_id = a.id
 GROUP BY 1
