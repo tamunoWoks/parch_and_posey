@@ -260,3 +260,4 @@ GROUP BY 1
 HAVING AVG(o.total_amt_usd) > (SELECT AVG(o.total_amt_usd) avg_all
 				FROM orders o);
 ```
+Finally, we just want the average of these values.
