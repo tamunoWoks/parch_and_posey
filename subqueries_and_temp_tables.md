@@ -176,3 +176,4 @@ HAVING SUM(o.total) > (SELECT total
 				ORDER BY 2 DESC
 				LIMIT 1) sub)
 ```
+This is now a list of all the accounts with more total orders. We can get the count with just another simple subquery.
