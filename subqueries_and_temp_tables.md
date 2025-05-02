@@ -29,6 +29,7 @@ FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
 GROUP BY channel
 ORDER BY 2 DESC;
 ```
+Let's apply CTE's for this exact problem.
 - Use **DATE_TRUNC** to pull `month` level information about the first order ever placed in the **orders** table.
 ```sql
 SELECT DATE_TRUNC('month', MIN(occurred_at)) 
