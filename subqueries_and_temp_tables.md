@@ -203,7 +203,7 @@ First, we want to find the account that had the most standard_qty paper. The que
 ```sql
 SELECT a.name account_name, 
 	SUM(o.standard_qty) total_std, 
-	SUM(o.total) total_amt
+	SUM(o.total) total
 FROM accounts a 
 JOIN orders o ON o.account_id = a.id
 GROUP BY 1
