@@ -371,3 +371,4 @@ FROM (SELECT a.id, a.name, AVG(o.total_amt_usd) avg_amt
 	HAVING AVG(o.total_amt_usd) > (SELECT AVG(o.total_amt_usd) avg_all
 					FROM orders o))temp;
 ```
+Now, let's do it with CTEs
