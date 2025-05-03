@@ -180,6 +180,23 @@ HAVING SUM(o.total_amt_usd) = (SELECT MAX(total_sales)
 This provides the Northeast with 2357 orders.  
 
 We can also do this with CTEs.
+```sql
+WITH t1 AS (SELECT r.name reg_name, SUM(o.total_amt_usd) total
+		FROM sales_reps s 
+		JOIN region r ON r.id = s.region_id
+		JOIN accounts a ON s.id = a.sales_rep_id
+		JOIN orders o ON o.account_id = a.id
+		GROUP BY 1),
+     t2 AS (SELECT MAX(total)
+		FROM t1)
+SELECT r.name, COUNT(o.total) as total_orders
+FROM sales_reps s 
+JOIN accounts a ON s.id = a.sales_rep_id
+JOIN orders o ON o.account_id = a.id
+JOIN region r ON r.id = s.region_id
+GROUP BY r.name
+HAVING SUM(o.total_amt_usd) = (SELECT * FROM t2)
+```
 - How many **accounts** had more **total** purchases than the account **name** which has bought the most **standard_qty** paper throughout their lifetime as a customer?  
 
 First, we want to find the account that had the most standard_qty paper. The query here pulls that account, as well as the total amount:
