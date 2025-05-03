@@ -245,6 +245,24 @@ FROM (SELECT a.name
 					)outer_tab;
 ```
 Now lets do this with CTEs
+```sql
+WITH t1 AS (SELECT a.name account_name, 
+			SUM(o.standard_qty) total_std, 
+			SUM(o.total) total
+		FROM accounts a 
+		JOIN orders o ON o.account_id = a.id
+		GROUP BY 1
+		ORDER BY 2 DESC
+		LIMIT 1),
+	t2 AS (SELECT a.name
+		FROM accounts a
+		JOIN orders o ON o.account_id = a.id
+		GROUP BY 1
+		HAVING SUM(o.total) > (SELECT total
+					FROM t1))
+SELECT COUNT(*)
+FROM t2;
+```
 - For the customer that spent the most (in total over their lifetime as a customer) **total_amt_usd**, how many **web_events** did they have for each **channel**?
 
 Here, we first want to pull the customer with the most spent in lifetime value.
