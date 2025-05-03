@@ -291,7 +291,25 @@ ON w.account_id = a.id AND a.id = (SELECT id
 GROUP BY 1, 2
 ORDER BY 3 DESC;
 ```
-We added an ORDER BY to sort the result, and the account name to assure we are pulling from one account.
+We added an ORDER BY to sort the result, and the account name to assure we are pulling from one account.  
+
+Applying CTEs for this problem, we have:
+```sql
+WITH t1 AS (
+      SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
+      FROM orders o
+      JOIN accounts a
+      ON a.id = o.account_id
+      GROUP BY a.id, a.name
+      ORDER BY 3 DESC
+      LIMIT 1)
+SELECT a.name, w.channel, COUNT(*)
+FROM accounts a
+JOIN web_events w
+ON a.id = w.account_id AND a.id =  (SELECT id FROM t1)
+GROUP BY 1, 2
+ORDER BY 3 DESC;
+```
 - What is the lifetime average amount spent in terms of **total_amt_usd** for the top 10 total spending **accounts**?  
 
 First, we just want to find the top 10 accounts in terms of highest total_amt_usd.
@@ -313,23 +331,7 @@ FROM (SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
 	ORDER BY 3 DESC
 	LIMIT 10)temp;
 ```
-Applying CTEs for this problem, we have:
-```sql
-WITH t1 AS (
-      SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
-      FROM orders o
-      JOIN accounts a
-      ON a.id = o.account_id
-      GROUP BY a.id, a.name
-      ORDER BY 3 DESC
-      LIMIT 1)
-SELECT a.name, w.channel, COUNT(*)
-FROM accounts a
-JOIN web_events w
-ON a.id = w.account_id AND a.id =  (SELECT id FROM t1)
-GROUP BY 1, 2
-ORDER BY 3 DESC;
-```
+
 - What is the lifetime average amount spent in terms of **total_amt_usd**, including only the companies that spent more per order, on average, than the average of all orders.
 
 First, we want to pull the average of all accounts in terms of **total_amt_usd**: 
