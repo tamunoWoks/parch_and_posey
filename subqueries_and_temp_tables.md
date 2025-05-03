@@ -110,6 +110,23 @@ JOIN (SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
 ON t3.reg = t2.reg AND t3.total = t2.total;
 ```
 We can do this using CTEs as shown below
+```sql
+WITH t1 AS (
+	SELECT s.name rep, r.name reg, SUM(o.total_amt_usd) as total
+FROM sales_reps s 
+JOIN accounts a ON a.sales_rep_id = s.id
+JOIN orders o ON a.id = o.account_id
+JOIN region r ON r.id = s.region_id
+GROUP BY 1, 2
+ORDER BY 3 DESC),
+	t2 AS (
+	SELECT reg, MAX(total) as total
+	FROM t1
+	GROUP BY 1)
+SELECT t1.rep, t1.reg, t1.total
+FROM t1
+JOIN t2 ON t1.reg = t2.reg AND t1.total = t2.total;
+```
 - For the region with the largest sales **total_amt_usd**, how many **total** orders were placed?
 
 We will first write a query to pull the total_amt_usd for each region:  
