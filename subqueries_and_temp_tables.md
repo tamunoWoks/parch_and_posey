@@ -313,6 +313,10 @@ FROM (SELECT a.id, a.name, SUM(o.total_amt_usd) tot_spent
 	ORDER BY 3 DESC
 	LIMIT 10)temp;
 ```
+Applying CTEs for this problem, we have:
+```sql
+
+```
 - What is the lifetime average amount spent in terms of **total_amt_usd**, including only the companies that spent more per order, on average, than the average of all orders.
 
 First, we want to pull the average of all accounts in terms of **total_amt_usd**: 
