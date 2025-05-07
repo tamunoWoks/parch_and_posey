@@ -93,3 +93,20 @@ SELECT first_name, last_name, CONCAT(first_name, '.', last_name, '@', name, '.co
 FROM t1;
 ```
 - You may have noticed that in the previous solution some of the company names include spaces, which will certainly not work in an email address. Let's see if we can create an email address that will work by removing all of the spaces in the account name.
+```sql
+
+```
+or
+```sql
+
+```
+or
+```sql
+WITH t1 AS (
+    SELECT LEFT(primary_poc,STRPOS(primary_poc, ' ') -1 ) first_name,
+		RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) last_name,
+		name
+    FROM accounts)
+SELECT first_name, last_name, CONCAT(first_name, '.', last_name, '@', REPLACE(name, ' ', ''), '.com')
+FROM  t1;
+```
