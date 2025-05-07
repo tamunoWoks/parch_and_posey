@@ -39,7 +39,7 @@ There are 80 company names that start with a vowel and 271 that start with other
 - Use the `accounts` table to create **first** and **last** name columns that hold the first and last names for the `primary_poc`.
 ```sql
 SELECT LEFT(primary_poc, STRPOS(primary_poc, ' ') -1 ) first_name, 
-   RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) last_name
+   	RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) last_name
 FROM accounts;
 ```
 We can also do this with `POSITION()`
@@ -51,6 +51,6 @@ FROM accounts
 - Let us do the same thing for every rep `name` in the `sales_reps` table.
 ```sql
 SELECT LEFT(name, STRPOS(name, ' ') -1 ) first_name, 
-   RIGHT(name, LENGTH(name) - STRPOS(name, ' ')) last_name
+   	RIGHT(name, LENGTH(name) - STRPOS(name, ' ')) last_name
 FROM sales_reps;
 ```
