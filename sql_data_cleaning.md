@@ -61,3 +61,13 @@ SELECT LEFT(name, POSITION(' ' IN name) -1) first_name,
 FROM sales_reps
 ```
 - Each company in the `accounts` table wants to create an email address for each `primary_poc`. The email address should be the first name of the **primary_poc** `.` last name **primary_poc** `@` company name `.com`.
+```sql
+SELECT name,
+	primary_poc,
+	LEFT(primary_poc, POSITION(' ' IN primary_poc) -1) AS fname,
+	RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) AS lname,
+	LOWER(LEFT(primary_poc, POSITION(' ' IN primary_poc) -1))||'.'
+	||LOWER(RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')))
+	||'@'||LOWER(name)||'.com' AS new_mail
+FROM accounts;
+```
