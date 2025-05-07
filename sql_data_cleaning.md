@@ -82,3 +82,4 @@ SELECT name,
 		'@',LOWER(name),'.com') AS new_mail
 FROM accounts;
 ```
+- You may have noticed that in the previous solution some of the company names include spaces, which will certainly not work in an email address. Let's see if we can create an email address that will work by removing all of the spaces in the account name.
