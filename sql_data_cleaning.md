@@ -71,3 +71,7 @@ SELECT name,
 	||'@'||LOWER(name)||'.com' AS new_mail
 FROM accounts;
 ```
+or
+```sql
+
+```
