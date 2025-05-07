@@ -105,7 +105,14 @@ FROM accounts;
 ```
 or
 ```sql
-
+SELECT name,
+	primary_poc,
+	LEFT(primary_poc, POSITION(' ' IN primary_poc) -1) AS fname,
+	RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) AS lname,
+	CONCAT(LOWER(LEFT(primary_poc, POSITION(' ' IN primary_poc) -1)),'.',
+		LOWER(RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' '))),
+		'@',LOWER(REPLACE(name, ' ', '')),'.com') AS new_mail
+FROM accounts;
 ```
 or
 ```sql
