@@ -49,3 +49,8 @@ SELECT LEFT(primary_poc, POSITION(' ' IN primary_poc) -1) first_name,
 FROM accounts
 ```
 - Let us do the same thing for every rep `name` in the `sales_reps` table.
+```sql
+SELECT LEFT(name, STRPOS(name, ' ') -1 ) first_name, 
+   RIGHT(name, LENGTH(name) - STRPOS(name, ' ')) last_name
+FROM sales_reps;
+```
