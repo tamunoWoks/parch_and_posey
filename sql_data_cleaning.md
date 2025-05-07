@@ -55,3 +55,8 @@ SELECT LEFT(name, STRPOS(name, ' ') -1 ) first_name,
 FROM sales_reps;
 ```
 We can also do this with `POSITION()`
+```sql
+SELECT LEFT(name, POSITION(' ' IN name) -1) first_name,
+	RIGHT(name, LENGTH(name) - POSITION(' ' IN name)) last_name
+FROM sales_reps
+```
