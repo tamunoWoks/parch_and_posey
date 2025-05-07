@@ -94,7 +94,14 @@ FROM t1;
 ```
 - You may have noticed that in the previous solution some of the company names include spaces, which will certainly not work in an email address. Let's see if we can create an email address that will work by removing all of the spaces in the account name.
 ```sql
-
+SELECT name,
+	primary_poc,
+	LEFT(primary_poc, POSITION(' ' IN primary_poc) -1) AS fname,
+	RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) AS lname,
+	LOWER(LEFT(primary_poc, POSITION(' ' IN primary_poc) -1))||'.'
+	||LOWER(RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')))
+	||'@'||LOWER(REPLACE(name, ' ', ''))||'.com' AS new_mail
+FROM accounts;
 ```
 or
 ```sql
