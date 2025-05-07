@@ -42,4 +42,5 @@ SELECT LEFT(primary_poc, STRPOS(primary_poc, ' ') -1 ) first_name,
    RIGHT(primary_poc, LENGTH(primary_poc) - STRPOS(primary_poc, ' ')) last_name
 FROM accounts;
 ```
+We can also do this with `POSITION()`  
 - Let us do the same thing for every rep `name` in the `sales_reps` table.
