@@ -153,3 +153,4 @@ SELECT date original_date,
        SUBSTR(date,4,2)) AS new_date
 FROM sf_crime_data;
 ```
+- Now let us use either `CAST` or `::` to convert this to a date:
