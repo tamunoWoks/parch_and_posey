@@ -171,3 +171,4 @@ SELECT date original_date,
          )AS DATE) AS new_date
 FROM sf_crime_data;
 ```
+This new date can be now operated on using DATE_TRUNC and DATE_PART.
