@@ -137,3 +137,4 @@ SELECT first_name, last_name,
 FROM t1;
 ```
 ### DIVERSION
+For this set of questions, we will be working with a single table. This is a different dataset than Parch & Posey, It is the `sf_crime_data` dataset, unfortunately we couldn't download it from source.
