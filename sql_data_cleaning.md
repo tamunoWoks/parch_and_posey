@@ -154,3 +154,10 @@ SELECT date original_date,
 FROM sf_crime_data;
 ```
 - Now let us use either `CAST` or `::` to convert this to a date:
+```sql
+SELECT date original_date, 
+       (SUBSTR(date,7,4)|| '-' ||
+       LEFT(date,2)|| '-' ||
+       SUBSTR(date,4,2))::DATE AS new_date
+FROM sf_crime_data;
+```
