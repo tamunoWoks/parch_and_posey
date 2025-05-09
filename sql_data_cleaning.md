@@ -136,3 +136,4 @@ SELECT first_name, last_name,
 	|| LENGTH(first_name) || LENGTH(last_name) || REPLACE(UPPER(name), ' ', '')
 FROM t1;
 ```
+### DIVERSION
