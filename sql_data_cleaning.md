@@ -145,3 +145,4 @@ FROM sf_crime_data
 LIMIT 10;
 ```
 **NOTE:** The format of the date column is mm/dd/yyyy with times that are not correct also at the end of the date. 
+- Now let's write a query to change the date into the correct SQL date format `yyyy-mm-dd`. 
