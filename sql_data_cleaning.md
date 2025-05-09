@@ -146,3 +146,10 @@ LIMIT 10;
 ```
 **NOTE:** The format of the date column is mm/dd/yyyy with times that are not correct also at the end of the date. 
 - Now let's write a query to change the date into the correct SQL date format `yyyy-mm-dd`. 
+```sql
+SELECT date original_date, 
+       (SUBSTR(date,7,4)|| '-' ||
+       LEFT(date,2)|| '-' ||
+       SUBSTR(date,4,2)) AS new_date
+FROM sf_crime_data;
+```
