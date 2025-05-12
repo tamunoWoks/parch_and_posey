@@ -209,3 +209,4 @@ LEFT JOIN orders o
 ON a.id = o.account_id
 WHERE o.total IS NULL;
 ```
+- Use **COALESCE** to fill in each of the `qty` and `usd` columns with 0 for the table above:
