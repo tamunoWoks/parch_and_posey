@@ -192,3 +192,20 @@ ON a.id = o.account_id
 WHERE o.total IS NULL;
 ```
 - Use **COALESCE** to fill in the `orders.account_id` column with the `account_id` for the NULL value for the above table:
+```sql
+SELECT a.*,
+	COALESCE(o.account_id, a.id) account_id,
+	o.occurred_at, 
+	o.standard_qty, 
+	o.gloss_qty, 
+	o.poster_qty, 
+	o.total, 
+	o.standard_amt_usd, 
+	o.gloss_amt_usd, 
+	o.poster_amt_usd, 
+	o.total_amt_usd
+FROM accounts a
+LEFT JOIN orders o
+ON a.id = o.account_id
+WHERE o.total IS NULL;
+```
