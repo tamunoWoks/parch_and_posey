@@ -227,4 +227,10 @@ LEFT JOIN orders o
 ON a.id = o.account_id
 WHERE o.total IS NULL;
 ```
-- Let's find the original number of rows in the origunal table:
+- Let's count the number of `id`s in the origunal table:
+```sql
+SELECT COUNT(*) total_ids
+FROM accounts a
+LEFT JOIN orders o
+ON a.id = o.account_id;
+```
