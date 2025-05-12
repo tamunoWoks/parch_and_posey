@@ -173,3 +173,4 @@ FROM sf_crime_data;
 ```
 This new date can be now operated on using DATE_TRUNC and DATE_PART.
 ### COALESCE()
+- Write a query to find the row with missing data in the `orders` table:
