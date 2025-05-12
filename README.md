@@ -7,3 +7,10 @@ This is an SQL Business analysis project on a dummy dataset sourced from Udacity
 - [SQL Aggregations](https://github.com/tamunoWoks/parch_and_posey/blob/main/sql_aggregations.md)
 - [SQL Joins](https://github.com/tamunoWoks/parch_and_posey/blob/main/sql_joins.md)
 - [Subqueries & Temp Tables](https://github.com/tamunoWoks/parch_and_posey/blob/main/subqueries_and_temp_tables.md)
+
+### NOTE
+- You can create and populate a database in Postgre with the following code:
+```sql
+$ createdb crime
+$ psql crime < sf_crime_data.sql
+```
