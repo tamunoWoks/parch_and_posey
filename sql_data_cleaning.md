@@ -234,3 +234,4 @@ FROM accounts a
 LEFT JOIN orders o
 ON a.id = o.account_id;
 ```
+**Note:** The total count of `id`s is *6913*
