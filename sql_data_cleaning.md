@@ -227,3 +227,4 @@ LEFT JOIN orders o
 ON a.id = o.account_id
 WHERE o.total IS NULL;
 ```
+- Let's find the original number of rows in the origunal table:
