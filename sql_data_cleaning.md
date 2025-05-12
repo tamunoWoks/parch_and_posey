@@ -172,3 +172,4 @@ SELECT date original_date,
 FROM sf_crime_data;
 ```
 This new date can be now operated on using DATE_TRUNC and DATE_PART.
+### COALESCE()
