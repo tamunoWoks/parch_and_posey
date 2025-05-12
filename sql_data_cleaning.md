@@ -191,3 +191,4 @@ LEFT JOIN orders o
 ON a.id = o.account_id
 WHERE o.total IS NULL;
 ```
+- Use **COALESCE** to fill in the `orders.account_id` column with the `account_id` for the NULL value for the above table:
