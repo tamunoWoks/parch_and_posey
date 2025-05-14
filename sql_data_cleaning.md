@@ -8,6 +8,7 @@ FROM accounts
 GROUP BY 1
 ORDER BY 2 DESC;
 ```
+### LEFT()
 - Use the **accounts** table to pull the first letter of each company name to see the distribution of company names that begin with each letter (or number).
 ```sql
 SELECT LEFT(UPPER(name), 1) as initial,
