@@ -1,4 +1,4 @@
-Here we will treat the concept of **Window Functions** alongside its associated concepts like `OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK`, etc.
+Here we will treat the concept of **Window Functions** alongside its associated concepts like `OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK` and `DENSE_RANK`.
 
 - Let us calculate the running total of `standard_qty` orders, agrregating them by each month.
 ```sql
