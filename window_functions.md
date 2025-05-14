@@ -1,1 +1,1 @@
-
+- Let us calculate the running total of `standard_qty` orders, agrregating them by each month.
