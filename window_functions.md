@@ -22,3 +22,4 @@ SELECT standard_amt_usd,
 		ORDER BY occurred_at) AS running_total
 FROM orders;
 ```
+- Let's rank the total number of paper ordered by account: 
