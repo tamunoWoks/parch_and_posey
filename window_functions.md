@@ -23,7 +23,7 @@ SELECT standard_amt_usd,
 FROM orders;
 ```
 - Let's rank the total number of paper ordered by account:
-- ```sql
+```sql
   SELECT id,
        account_id,
        total,
