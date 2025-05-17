@@ -24,7 +24,7 @@ FROM orders;
 ```
 - Let's rank the total number of paper ordered by account:
 ```sql
-  SELECT id,
+SELECT id,
        account_id,
        total,
        RANK() OVER (PARTITION BY account_id ORDER BY total DESC) AS total_rank
