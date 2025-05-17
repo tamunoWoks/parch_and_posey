@@ -46,3 +46,16 @@ SELECT id,
 FROM orders;
 ```
 - Now let's experiment on aggregates in Window Functions without `ORDER BY`:
+```sql
+SELECT id,
+       account_id,
+       standard_qty,
+       DATE_TRUNC('month', occurred_at) AS month,
+       DENSE_RANK() OVER (PARTITION BY account_id ) AS dense_rank,
+       SUM(standard_qty) OVER (PARTITION BY account_id) AS sum_std_qty,
+       COUNT(standard_qty) OVER (PARTITION BY account_id) AS count_std_qty,
+       AVG(standard_qty) OVER (PARTITION BY account_id) AS avg_std_qty,
+       MIN(standard_qty) OVER (PARTITION BY account_id) AS min_std_qty,
+       MAX(standard_qty) OVER (PARTITION BY account_id) AS max_std_qty
+FROM orders
+```
