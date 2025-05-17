@@ -45,3 +45,4 @@ SELECT id,
        MAX(standard_qty) OVER (PARTITION BY account_id ORDER BY DATE_TRUNC('month',occurred_at)) AS max_std_qty
 FROM orders;
 ```
+- Now let's experiment on aggregates in Window Functions without `ORDER BY`:
