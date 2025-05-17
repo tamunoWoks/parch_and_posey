@@ -62,3 +62,18 @@ FROM orders
 **NOTE:** With ORDER BY, Ranks are assigned within each account_id partition based on month while without ORDER BY, all rows get rank 1 within their partition since there's no ordering criteria. Also, ORDER BY performs a running calculation on the aggregate calculations, while without ORDER BY there is a static partition calculation.
 ### Aliases for Multiple Window Functions
 - Let's rewrite the first query with `WINDOW` aliases:
+```sql
+SELECT 
+    id,
+    account_id,
+    standard_qty,
+    DATE_TRUNC('month', occurred_at) AS month,
+    DENSE_RANK() OVER account_window AS dense_rank,
+    SUM(standard_qty) OVER account_window AS sum_std_qty,
+    COUNT(standard_qty) OVER account_window AS count_std_qty,
+    AVG(standard_qty) OVER account_window AS avg_std_qty,
+    MIN(standard_qty) OVER account_window AS min_std_qty,
+    MAX(standard_qty) OVER account_window AS max_std_qty
+FROM orders
+WINDOW account_window AS (PARTITION BY account_id ORDER BY DATE_TRUNC('month', occurred_at))
+```
