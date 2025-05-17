@@ -60,3 +60,5 @@ SELECT id,
 FROM orders
 ```
 **NOTE:** With ORDER BY, Ranks are assigned within each account_id partition based on month while without ORDER BY, all rows get rank 1 within their partition since there's no ordering criteria. Also, ORDER BY performs a running calculation on the aggregate calculations, while without ORDER BY there is a static partition calculation.
+### Aliases for Multiple Window Functions
+- Let's rewrite the first query with `WINDOW` aliases:
