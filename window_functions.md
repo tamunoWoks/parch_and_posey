@@ -31,3 +31,4 @@ SELECT id,
 FROM orders;
 ```
 ### AGGREGATES IN WINDOW FUNCTIONS
+- Let's experiment on aggregates in Window Functions with `ORDER BY`:
