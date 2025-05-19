@@ -77,3 +77,4 @@ SELECT
 FROM orders
 WINDOW account_window AS (PARTITION BY account_id ORDER BY DATE_TRUNC('month', occurred_at))
 ```
+### Comparing Rows
