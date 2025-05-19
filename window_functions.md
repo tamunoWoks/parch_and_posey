@@ -106,3 +106,4 @@ SELECT occurred_at,
  GROUP BY 1
  ) AS sub;
 ```
+### Percentiles with Partitions
