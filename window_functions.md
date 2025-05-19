@@ -124,6 +124,6 @@ SELECT
        occurred_at,
        gloss_qty,
        NTILE(2) OVER (PARTITION BY account_id ORDER BY gloss_qty) AS gloss_half
-  FROM orders 
- ORDER BY account_id DESC
+FROM orders 
+ORDER BY account_id DESC
 ```
