@@ -78,6 +78,7 @@ FROM orders
 WINDOW account_window AS (PARTITION BY account_id ORDER BY DATE_TRUNC('month', occurred_at))
 ```
 ### Comparing Rows
+- Let us analyze the distribution of standard order quantities by account, comparing each account's total to the previous and next accounts when ordered by their total standard quantities.
 ```sql
 SELECT account_id,
        standard_sum,
