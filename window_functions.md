@@ -93,4 +93,4 @@ SELECT account_id,
  GROUP BY 1
  ) sub
 ```
-- Let us determine how the current order's total revenue ("total" meaning from sales of all types of paper) compares to the next order's total revenue.
+- Let us determine how the current order's total revenue ("total" meaning from sales of all types of paper) compares to the next order's total revenue.  We'll need to use `occurred_at` and `total_amt_usd` in the `orders` table along with `LEAD` to do so. In your query results, there should be four columns: `occurred_at`, `total_amt_usd`, `lead`, and `lead_difference`.
