@@ -81,6 +81,7 @@ SELECT id, account_id,
 FROM orders
 LIMIT 10;
 ```
+### LIKE
 - Use the accounts table to find all the companies whose names start with 'C'.
 ```sql
 SELECT name
