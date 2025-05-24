@@ -39,6 +39,7 @@ LEFT JOIN sales_reps
    AND accounts.primary_poc < sales_reps.name
 ```
 ### SELF JOINs
+- Let us identify the pairs of orders from the same account where the second order occurred within 28 days after the first order. 
 ```sql
 SELECT o1.id AS o1_id,
        o1.account_id AS o1_account_id,
