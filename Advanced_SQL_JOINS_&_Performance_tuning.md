@@ -17,14 +17,14 @@ WHERE accounts.sales_rep_id IS NULL OR sales_reps.id IS NULL;
 ```sql
 SELECT o.id AS order_id,
         o.occurred_at AS order_date,
-	      e.*
+	e.*
 FROM orders o
 LEFT JOIN web_events AS e
 	ON e.account_id = o.account_id
 	AND e.occurred_at < o.occurred_at
 WHERE DATE_TRUNC('month', o.occurred_at) = (
-											SELECT DATE_TRUNC('month', MIN(occurred_at))
-											FROM orders
-										)
+			SELECT DATE_TRUNC('month', MIN(occurred_at))
+			FROM orders
+			)
 ORDER BY o.account_id, o.occurred_at;
 ```
