@@ -54,3 +54,6 @@ LEFT JOIN orders o2
   AND o2.occurred_at <= o1.occurred_at + INTERVAL '28 days'
 ORDER BY o1.account_id, o1.occurred_at
 ```
+- Modify the previous query to perform the same interval analysis except for the `web_events` table. Also:  
+	- Change the interval to 1 day to find those web events that occurred after, but not more than 1 day after, another web event.
+	- Add a column for the channel variable in both instances of the table in your query
