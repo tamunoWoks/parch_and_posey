@@ -36,7 +36,7 @@ SELECT accounts.name as account_name,
 FROM accounts
 LEFT JOIN sales_reps
     ON accounts.sales_rep_id = sales_reps.id
-   AND accounts.primary_poc < sales_reps.name
+   AND accounts.primary_poc < sales_reps.name;
 ```
 ### SELF JOINs
 - Let us identify the pairs of orders from the same account where the second order occurred within 28 days after the first order. 
@@ -52,7 +52,7 @@ LEFT JOIN orders o2
    ON o1.account_id = o2.account_id
   AND o2.occurred_at > o1.occurred_at
   AND o2.occurred_at <= o1.occurred_at + INTERVAL '28 days'
-ORDER BY o1.account_id, o1.occurred_at
+ORDER BY o1.account_id, o1.occurred_at;
 ```
 - Modify the previous query to perform the same interval analysis except for the `web_events` table. Also:  
 	- Change the interval to 1 day to find those web events that occurred after, but not more than 1 day after, another web event.
@@ -71,5 +71,5 @@ LEFT JOIN web_events we2
    ON we1.account_id = we2.account_id
   AND we1.occurred_at > we2.occurred_at
   AND we1.occurred_at <= we2.occurred_at + INTERVAL '1 day'
-ORDER BY we1.account_id, we2.occurred_at
+ORDER BY we1.account_id, we2.occurred_at;
 ```
