@@ -13,7 +13,7 @@ WHERE accounts.sales_rep_id IS NULL OR sales_reps.id IS NULL;
 ```
 **NOTE:** Unmatched rows do not exist for this query.
 ### Inequality JOINs
-- Let us retrieve the order data along with all `web events` that occurred before each order, but only for `orders` placed in the very first month of order records.
+- Let us retrieve the order data along with all `web events` that occurred before each order, but only for `orders` placed in the very first month of order records:
 ```sql
 SELECT o.id AS order_id,
         o.occurred_at AS order_date,
@@ -28,3 +28,4 @@ WHERE DATE_TRUNC('month', o.occurred_at) = (
 			)
 ORDER BY o.account_id, o.occurred_at;
 ```
+- Let us write a query that left joins the `accounts` table and the `sales_reps` tables on each sale rep's ID number and joins it using the `<` comparison operator on `accounts.primary_poc` and `sales_reps.name`:
