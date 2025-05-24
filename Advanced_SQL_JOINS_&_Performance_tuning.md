@@ -38,6 +38,7 @@ LEFT JOIN sales_reps
     ON accounts.sales_rep_id = sales_reps.id
    AND accounts.primary_poc < sales_reps.name
 ```
+### SELF JOINs
 ```sql
 SELECT o1.id AS o1_id,
        o1.account_id AS o1_account_id,
