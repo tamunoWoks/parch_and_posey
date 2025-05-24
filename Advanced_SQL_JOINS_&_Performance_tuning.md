@@ -12,3 +12,4 @@ FULL JOIN sales_reps ON accounts.sales_rep_id = sales_reps.id
 WHERE accounts.sales_rep_id IS NULL OR sales_reps.id IS NULL;
 ```
 **NOTE:** Unmatched rows do not exist for this query.
+### Inequality JOINs
