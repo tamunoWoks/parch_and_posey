@@ -74,3 +74,5 @@ LEFT JOIN web_events we2
 ORDER BY we1.account_id, we2.occurred_at;
 ```
 ### UNION
+#### Appending Data via UNION
+- Write a query that uses UNION ALL on two instances (and selecting all columns) of the accounts table.
