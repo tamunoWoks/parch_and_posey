@@ -95,3 +95,4 @@ SELECT *
   FROM accounts
   WHERE name = 'Disney';
 ```
+- The results from the above query can also be generated with:
