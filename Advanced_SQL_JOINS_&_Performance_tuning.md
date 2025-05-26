@@ -73,3 +73,4 @@ LEFT JOIN web_events we2
   AND we1.occurred_at <= we2.occurred_at + INTERVAL '1 day'
 ORDER BY we1.account_id, we2.occurred_at;
 ```
+### UNION
