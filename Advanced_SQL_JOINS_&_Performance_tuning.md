@@ -96,3 +96,8 @@ SELECT *
   WHERE name = 'Disney';
 ```
 - The results from the above query can also be generated with:
+```sql
+SELECT *
+FROM accounts
+WHERE name = 'Walmart' OR name = 'Disney';
+```
