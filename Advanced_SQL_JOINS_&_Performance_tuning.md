@@ -83,3 +83,4 @@ UNION ALL
 SELECT *
   FROM accounts
 ```
+**NOTE:** This query returned 702 rows, however if we used `UNION` instead of `UNION ALL`, it would return 351 rows as `UNION` only returns distict rows.
