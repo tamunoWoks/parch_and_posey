@@ -119,3 +119,4 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 ### JOINing Subqueries
+- Write a query that joins the account, order, and web event tables to show which orders and web events occurred on the same day:
