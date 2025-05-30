@@ -1,4 +1,5 @@
 ## Advanced SQL JOINS & Performance tuning
+In this module, we will deal on concepts like `FULL OUTER JOIN`, Inequality JOINs, Self JOINs, `UNION` and JOINing Subqueries.
 - Let us find each account who has a sales rep and each sales rep that has an account:
 ```sql
 SELECT *
