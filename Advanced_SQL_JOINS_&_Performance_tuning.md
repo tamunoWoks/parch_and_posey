@@ -133,3 +133,19 @@ ON     DATE_TRUNC('day', we.occurred_at) = DATE_TRUNC('day', o.occurred_at)
 ORDER BY 1 DESC;
 ```
 **NOTE:** The result of the above query is very robust and has over 70,000 rows. We can get the same result much more efficiently by aggregating the tables seperately so the `COUNT` are performed across far smaller datasets. 
+```sql
+SELECT DATE_TRUNC('day', o.occurred_at) AS date,
+       COUNT(a.sales_rep_id) AS active_sales_reps,
+       COUNT(o.id) AS orders
+FROM   accounts a
+JOIN   orders o
+ON     o.account_id = a.id
+GROUP BY 1;
+
+SELECT DATE_TRUNC('day', we.occurred_at) AS date,
+       COUNT(we.id) AS web_visits
+FROM   web_events we
+GROUP BY 1
+
+ORDER BY 1 DESC;
+```
