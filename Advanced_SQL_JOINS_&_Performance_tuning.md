@@ -120,3 +120,15 @@ ORDER BY 2 DESC;
 ```
 ### JOINing Subqueries
 - Write a query that joins the account, order, and web event tables to show which orders and web events occurred on the same day:
+```sql
+SELECT o.occurred_at AS date,
+       a.sales_rep_id,
+       o.id AS order_id,
+       we.id AS web_event_id
+FROM   accounts a
+JOIN   orders o
+ON     o.account_id = a.id
+JOIN   web_events we
+ON     DATE_TRUNC('day', we.occurred_at) = DATE_TRUNC('day', o.occurred_at)
+ORDER BY 1 DESC;
+```
