@@ -1,3 +1,4 @@
+## Advanced SQL JOINS & Performance tuning
 - Let us find each account who has a sales rep and each sales rep that has an account:
 ```sql
 SELECT *
